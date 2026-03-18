@@ -26,6 +26,7 @@
     .header .title { font-size: 11pt; color: #555; margin-top: 2px; }
     .header .links { margin-top: 6px; font-size: 9.5pt; color: #555; }
     .header .links span { margin-right: 12px; }
+    .header .links a { color: #555; }
 
     /* Sections */
     .section { margin-bottom: 14px; }
@@ -44,7 +45,7 @@
 
     /* Projects */
     .project { margin-bottom: 10px; }
-    .project .project-header { display: flex; justify-content: space-between; align-items: baseline; }
+    .project .project-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; }
     .project h3 { font-size: 10.5pt; font-weight: 600; }
     .project .tech { font-size: 9pt; color: #777; font-style: italic; }
     .project .subtitle { font-size: 9.5pt; color: #555; }
@@ -52,7 +53,7 @@
     .project li { font-size: 9.5pt; color: #333; margin-bottom: 1px; }
 
     /* Skills */
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px 24px; }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
     .skill-cat { font-size: 9.5pt; }
     .skill-cat strong { font-size: 9.5pt; color: #1a1a1a; }
     .skill-cat span { color: #555; }
@@ -61,30 +62,47 @@
     @media print {
       body { padding: 0; }
       a { color: #1a1a1a; }
+      .no-print { display: none; }
     }
+
+    /* Back link */
+    .back-link {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      font-size: 9pt;
+      color: #777;
+      text-decoration: none;
+      padding: 6px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: white;
+    }
+    .back-link:hover { color: #1a1a1a; border-color: #999; text-decoration: none; }
   </style>
 </head>
 <body>
+
+<a href="https://alexlaguardia.dev" class="back-link no-print">&larr; Back to Portfolio</a>
 
 <div class="header">
   <h1>Alex LaGuardia</h1>
   <div class="title">Full-Stack Software Engineer</div>
   <div class="links">
-    <span>alexlaguardia.dev</span>
-    <span>alex@alexlaguardia.dev</span>
+    <span><a href="https://alexlaguardia.dev">alexlaguardia.dev</a></span>
     <span>Pennsylvania, USA</span>
-    <span>Open to Remote</span>
+    <span><a href="https://github.com/AlexlaGuardia">github.com/AlexlaGuardia</a></span>
+    <span><a href="https://linkedin.com/in/alex-laguardia-a28a37216">LinkedIn</a></span>
   </div>
 </div>
 
 <div class="section">
   <h2>Summary</h2>
   <p class="summary">
-    Self-taught full-stack engineer with production experience across Python, Rust, and TypeScript.
-    I build end-to-end systems: AI-powered SaaS platforms, multi-strategy trading systems, game engines,
-    and cognitive architectures. Strong focus on AI integration, systems design, and shipping software
-    that runs in production. 290K+ lines of code across 6 active projects with 48 concurrent services
-    on a single VPS.
+    Full-stack software engineer specializing in AI systems, backend architecture, and production platforms.
+    Self-taught. 291K lines of production code across 6 projects &mdash; including a SaaS platform with paying
+    customers, a cognitive AI layer with multi-LLM routing, and a 3D game engine built from scratch in Rust.
+    Ships daily on a single VPS running 48 concurrent services.
   </p>
 </div>
 
@@ -93,68 +111,65 @@
 
   <div class="project">
     <div class="project-header">
-      <h3>Guardia Content &mdash; AI-Powered SaaS Platform</h3>
-      <span class="tech">Python, FastAPI, Next.js, React, SQLite, Stripe</span>
-    </div>
-    <div class="subtitle">Social media automation platform with paying clients</div>
-    <ul>
-      <li>Designed and built full content pipeline: upload &rarr; AI styling &rarr; caption generation &rarr; quality control &rarr; scheduling &rarr; publishing</li>
-      <li>Multi-agent architecture with isolated worker processes (Artemis, Mercury, Argus) orchestrated via PM2</li>
-      <li>Stripe billing integration, Facebook/Instagram OAuth2, custom domain support via Cloudflare for SaaS</li>
-      <li>Next.js 14 frontend with custom design system, App Router, and Framer Motion animations</li>
-    </ul>
-  </div>
-
-  <div class="project">
-    <div class="project-header">
-      <h3>Supra Engine &mdash; 3D Game Engine</h3>
-      <span class="tech">Rust, wgpu, rapier3d, Custom ECS, Lua</span>
-    </div>
-    <div class="subtitle">85K+ lines of Rust across 8 crates, built from scratch</div>
-    <ul>
-      <li>Custom Entity Component System, wgpu-based 3D renderer, rapier3d physics with character controller</li>
-      <li>Full movement state machine: walk, sprint, slide, jump, air-strafe, bunny hop, wall-run, wall-bounce, mantle</li>
-      <li>Lua scripting layer for game logic, procedural world generation, weapon and weather systems</li>
-      <li>Designed for multiplayer from day one with serializable components and deterministic physics</li>
-    </ul>
-  </div>
-
-  <div class="project">
-    <div class="project-header">
       <h3>Akatskii &mdash; Cognitive AI Architecture</h3>
-      <span class="tech">Python, FastAPI, Groq, Anthropic, Google AI, ONNX</span>
+      <span class="tech">Python, FastAPI, Gemini, Groq, Claude, MCP</span>
     </div>
-    <div class="subtitle">Multi-LLM cognitive layer with thought routing and semantic memory</div>
+    <div class="subtitle"><a href="https://github.com/AlexlaGuardia/Akatskii">github.com/AlexlaGuardia/Akatskii</a></div>
     <ul>
-      <li>Complexity-based LLM routing: fast queries to Groq (150ms), reasoning to Claude, vision to Gemini</li>
-      <li>Agentic tool loop with 70+ tools, parallel execution, and automatic result truncation</li>
-      <li>Semantic memory with vector embeddings (384-dim), cosine similarity search, and hybrid recall</li>
-      <li>Context compaction system: extracts facts, drops noise, creates continuity hints across sessions</li>
+      <li>Hybrid regex + LLM router classifies inputs into 5 thought types, routing to optimal provider by cost and complexity &mdash; 80% of routing instant and free</li>
+      <li>Agentic tool loop executes up to 15 iterations with parallel tool calls via MCP bridge (40+ tools)</li>
+      <li>Memory compaction daemon extracts structured facts and generates episodic snapshots for 3x context compression</li>
+      <li>Background daemons autonomously monitor news, sync calendars, and execute queued tasks via Shadow Runner</li>
     </ul>
   </div>
 
   <div class="project">
     <div class="project-header">
-      <h3>Paradise &mdash; Multi-Strategy Trading System</h3>
-      <span class="tech">Python, OANDA API, Alpaca API, Polymarket</span>
+      <h3>Guardia Content &mdash; AI-Powered SaaS Platform</h3>
+      <span class="tech">Python, FastAPI, Next.js, React, Stripe, SQLite</span>
     </div>
-    <div class="subtitle">4 autonomous trading strategies with institutional-grade risk management</div>
+    <div class="subtitle">Production system with paying customers</div>
     <ul>
-      <li>Independent strategy daemons: position trading, scalping, prediction markets, funding rate arbitrage</li>
-      <li>Three-layer risk oversight: signal quality gate, portfolio risk (drawdown/correlation/exposure), discipline enforcement</li>
-      <li>Thesis-driven investment pipeline with automated 6-hour research cycles and conviction scoring</li>
+      <li>Full content pipeline: upload &rarr; AI styling (SDXL) &rarr; caption generation (Llama 3.3 70B) &rarr; quality gate &rarr; scheduling &rarr; multi-platform posting</li>
+      <li>Stripe billing with tiered pricing, Facebook/Instagram OAuth2, custom domain support via Cloudflare for SaaS</li>
+      <li>Next.js 14 frontend with custom design system, client dashboard, admin HQ, and public microsites</li>
+      <li>12 backend services processing content autonomously via PM2</li>
     </ul>
   </div>
 
   <div class="project">
     <div class="project-header">
       <h3>Guardia MCP &mdash; Model Context Protocol Server</h3>
-      <span class="tech">Python, MCP Protocol, SSE, OAuth</span>
+      <span class="tech">Python, FastAPI, MCP, OAuth 2.1, SSE</span>
     </div>
-    <div class="subtitle">Custom MCP server bridging AI assistants to production infrastructure</div>
+    <div class="subtitle"><a href="https://github.com/AlexlaGuardia/guardia-mcp">github.com/AlexlaGuardia/guardia-mcp</a></div>
     <ul>
-      <li>70+ tools with decorator-based auto-registration and frame-based access filtering</li>
-      <li>Connects Claude, custom agents, and web interfaces to all backend systems via single protocol</li>
+      <li>70+ tools with decorator-based auto-registration and frame-based access filtering per interface context</li>
+      <li>OAuth 2.1 authentication with JWT, SSE transport, used by 3 AI interfaces as unified tool layer</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="project-header">
+      <h3>Paradise &mdash; Multi-Strategy Trading System</h3>
+      <span class="tech">Python, OANDA, Alpaca, Polymarket</span>
+    </div>
+    <div class="subtitle">4 autonomous strategies across forex, stocks, and prediction markets</div>
+    <ul>
+      <li>Strategy layer (4 independent agents), execution layer (OANDA forex, Alpaca stocks), three-layer risk oversight</li>
+      <li>Thesis-driven investment pipeline with automated 6-hour research cycles and conviction scoring</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="project-header">
+      <h3>Supra &mdash; 3D Game Engine</h3>
+      <span class="tech">Rust, wgpu, rapier3d, Custom ECS</span>
+    </div>
+    <div class="subtitle">85K lines of Rust across 8 crates, built from scratch</div>
+    <ul>
+      <li>Custom ECS, wgpu renderer, rapier3d physics, full movement state machine (walk/sprint/slide/jump/wall-run/mantle)</li>
+      <li>Designed for multiplayer from day one with serializable components and deterministic physics</li>
     </ul>
   </div>
 </div>
@@ -163,21 +178,17 @@
   <h2>Skills</h2>
   <div class="skills-grid">
     <div class="skill-cat"><strong>Languages:</strong> <span>Python (expert), Rust (advanced), TypeScript, SQL, Lua</span></div>
-    <div class="skill-cat"><strong>Backend:</strong> <span>FastAPI, async workers, queue pipelines, daemon architecture, REST APIs</span></div>
-    <div class="skill-cat"><strong>Frontend:</strong> <span>Next.js 14, React 18, Tailwind CSS, Framer Motion, App Router</span></div>
-    <div class="skill-cat"><strong>AI/ML:</strong> <span>Multi-LLM routing, agentic tool loops, RAG, embeddings, MCP, prompt engineering</span></div>
-    <div class="skill-cat"><strong>Infrastructure:</strong> <span>PM2, Cloudflare, SQLite, Linux, SSH, automated backups</span></div>
-    <div class="skill-cat"><strong>Game Engine:</strong> <span>wgpu, rapier3d, custom ECS, state machines, Lua scripting</span></div>
+    <div class="skill-cat"><strong>Backend:</strong> <span>FastAPI, async workers, queue pipelines, daemon architecture</span></div>
+    <div class="skill-cat"><strong>Frontend:</strong> <span>Next.js 14, React 18, Tailwind CSS, App Router</span></div>
+    <div class="skill-cat"><strong>AI/ML:</strong> <span>Multi-LLM routing, agentic tool loops, RAG, embeddings, MCP</span></div>
+    <div class="skill-cat"><strong>Infrastructure:</strong> <span>PM2 (48 services), Cloudflare, SQLite, Linux, SSH</span></div>
+    <div class="skill-cat"><strong>APIs:</strong> <span>OANDA, Alpaca, Stripe, Meta Graph, Cloudflare, Resend</span></div>
   </div>
 </div>
 
 <div class="section">
-  <h2>Infrastructure</h2>
-  <p class="summary">
-    48 concurrent PM2 services on a single Hetzner VPS (8GB RAM). 7 SQLite databases scoped by domain.
-    Cloudflare tunnels with custom domain routing. Automated daily backups. Full staging environments.
-    Multi-provider AI stack (Groq, Anthropic, Google, OpenAI) optimized for cost and latency.
-  </p>
+  <h2>Education</h2>
+  <p class="summary">Self-taught. Building production software since 2023.</p>
 </div>
 
 </body>

@@ -47,7 +47,7 @@ export function Nav() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href="/resume.html"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm px-4 py-2 border border-accent/40 text-accent rounded hover:bg-accent/10 transition-colors"
@@ -93,7 +93,7 @@ export function Nav() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href="/resume.html"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-2 text-sm px-4 py-2 border border-accent/40 text-accent rounded hover:bg-accent/10 transition-colors"
