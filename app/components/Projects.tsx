@@ -138,7 +138,7 @@ const projects = [
       {
         heading: "The routing problem",
         content:
-          "Different tasks need different LLMs. A quick status check shouldn\u2019t cost the same as deep architectural reasoning. The thought router analyzes incoming requests and selects the optimal model: fast pattern matching to Groq (Llama 3.3 70B), complex reasoning to Claude, vision tasks to Gemini. The router considers complexity, required capabilities, cost, and latency. Most requests resolve on the cheapest model. The ones that need more get it automatically.",
+          "Different tasks need different LLMs. A quick status check shouldn\u2019t cost the same as deep architectural reasoning. The thought router analyzes incoming requests and selects the optimal model: fast pattern matching to Groq (Llama 3.3 70B), complex reasoning to Claude, vision tasks to Gemini. The router considers complexity, required capabilities, cost, and latency. Most requests resolve on the cheapest model. The ones that need more get it automatically. The routing logic was mature enough to extract into a standalone open-source library \u2014 llm-route (github.com/AlexlaGuardia/llm-route).",
       },
       {
         heading: "Memory that persists",
