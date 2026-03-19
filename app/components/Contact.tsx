@@ -1,9 +1,18 @@
+"use client";
+
+import { useReveal } from "../hooks/useReveal";
+
 export function Contact() {
+  const ref = useReveal<HTMLElement>();
+
   return (
-    <section id="contact" className="py-32 px-6">
-      <div className="max-w-xl mx-auto text-center">
+    <section ref={ref} id="contact" className="reveal relative py-32 px-6 overflow-hidden">
+      {/* Ambient glow — subtle, just enough to differentiate the section */}
+      <div className="contact-glow" aria-hidden="true" />
+
+      <div className="relative max-w-xl mx-auto text-center">
         <p className="font-mono text-sm text-accent mb-4 tracking-wide">
-          05. What&apos;s Next
+          04. What&apos;s Next
         </p>
         <h2 className="text-4xl font-bold text-foreground mb-6">
           Let&apos;s Build Something

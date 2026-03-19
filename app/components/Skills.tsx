@@ -1,3 +1,7 @@
+"use client";
+
+import { useReveal } from "../hooks/useReveal";
+
 const categories = [
   {
     title: "Languages",
@@ -67,11 +71,13 @@ const categories = [
 ];
 
 export function Skills() {
+  const ref = useReveal<HTMLElement>();
+
   return (
-    <section id="skills" className="py-32 px-6">
+    <section ref={ref} id="skills" className="reveal py-32 px-6">
       <div className="max-w-3xl mx-auto">
         <h2 className="flex items-center gap-4 text-2xl font-bold text-foreground mb-16">
-          <span className="font-mono text-accent text-lg">04.</span>
+          <span className="font-mono text-accent text-lg">03.</span>
           Skills & Tools
           <span className="h-px bg-border flex-1 ml-4" />
         </h2>

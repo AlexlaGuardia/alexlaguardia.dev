@@ -1,6 +1,12 @@
+"use client";
+
+import { useReveal } from "../hooks/useReveal";
+
 export function About() {
+  const ref = useReveal<HTMLElement>();
+
   return (
-    <section id="about" className="py-32 px-6">
+    <section ref={ref} id="about" className="reveal py-32 px-6">
       <div className="max-w-3xl mx-auto">
         <h2 className="flex items-center gap-4 text-2xl font-bold text-foreground mb-8">
           <span className="font-mono text-accent text-lg">01.</span>

@@ -41,3 +41,117 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #404040;
 }
+
+/* ─── Hero stagger entrance ─── */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-line {
+  opacity: 0;
+  animation: hero-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-line-1 { animation-delay: 0.05s; }
+.hero-line-2 { animation-delay: 0.18s; }
+.hero-line-3 { animation-delay: 0.32s; }
+.hero-line-4 { animation-delay: 0.50s; }
+.hero-line-5 { animation-delay: 0.65s; }
+
+/* ─── Typewriter cursor blink ─── */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--color-accent);
+  vertical-align: text-bottom;
+  margin-left: 3px;
+  animation: cursor-blink 1s step-end infinite;
+}
+
+/* ─── Scroll reveal ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Project card accent bar ─── */
+.project-card-bar {
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: var(--color-accent);
+  border-radius: 0 2px 2px 0;
+  opacity: 0;
+  transform: scaleY(0.3);
+  transform-origin: top center;
+  transition: opacity 0.25s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card-expanded .project-card-bar {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* ─── Expanded section fade-in ─── */
+@keyframes detail-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.detail-section {
+  animation: detail-fade 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ─── Hero ambient grid ─── */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, #262626 1px, transparent 1px),
+    linear-gradient(to bottom, #262626 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 100%);
+  opacity: 0.25;
+  pointer-events: none;
+  transition: transform 0.15s ease-out;
+}
+
+/* ─── Contact section glow ─── */
+@keyframes ambient-glow {
+  0%, 100% { opacity: 0.04; transform: scale(1); }
+  50%       { opacity: 0.07; transform: scale(1.05); }
+}
+
+.contact-glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+  animation: ambient-glow 6s ease-in-out infinite;
+  pointer-events: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
