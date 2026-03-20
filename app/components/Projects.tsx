@@ -183,6 +183,78 @@ const projects = [
     ],
   },
   {
+    title: "Vigil",
+    subtitle: "Cognitive Infrastructure for AI Agents",
+    description:
+      "An open-source Python library that gives AI agents persistent awareness, memory signals, and frame-based tool filtering. Extracted from a production system running 95+ tools across 6 contexts. Published to PyPI.",
+    tech: [
+      "Python",
+      "SQLite",
+      "CLI",
+      "PyPI",
+      "MIT License",
+    ],
+    highlights: [
+      "7 modules: signals, frames, registry, awareness, daemon, db, cli",
+      "Frame-based filtering: agents see only tools relevant to their context",
+      "2,100+ lines, 48 tests, pip-installable (pip install vigil-agent)",
+    ],
+    github: "https://github.com/AlexlaGuardia/Vigil",
+    detail: [
+      {
+        heading: "The problem",
+        content:
+          "AI agents today are stateless. Every session starts from zero \u2014 no awareness of what happened last time, no memory of decisions, no understanding of what\u2019s active right now. I built a production system that solved this across 6 different interfaces and 95+ tools. Vigil extracts those patterns into a standalone library anyone can use.",
+      },
+      {
+        heading: "Signals and awareness",
+        content:
+          "Signals are the core primitive \u2014 structured observations that any agent can emit and any other agent can read. An awareness daemon compiles recent signals into a hot context snapshot every 90 seconds, giving every agent a shared picture of system state without polling databases or reading logs. It\u2019s the difference between an agent that asks \u2018what\u2019s happening?\u2019 and one that already knows.",
+      },
+      {
+        heading: "Frame-based filtering",
+        content:
+          "When you have 95 tools, dumping all of them on every request drowns the LLM in schemas. Frames solve this: each context (trading, creative writing, system admin) declares which tools it needs. Discovery is filtered, but execution isn\u2019t \u2014 any tool remains callable when needed. This pattern emerged from real usage and turned out to be genuinely novel in the MCP ecosystem.",
+      },
+    ],
+  },
+  {
+    title: "MCP Server Suite",
+    subtitle: "Premium MCP Servers for Major Platforms",
+    description:
+      "Production-grade MCP servers for underserved SaaS platforms. Each server exposes 25-34 tools with full CRUD, reports, webhooks, and system diagnostics \u2014 filling gaps where existing servers offer 3-5 tools at most.",
+    tech: [
+      "Python",
+      "MCP Protocol",
+      "httpx",
+      "REST APIs",
+      "PyPI",
+    ],
+    highlights: [
+      "mcp-woocommerce: 34 tools for 5M+ WooCommerce stores (products, orders, customers, reports, webhooks)",
+      "mcp-mailchimp: 28 tools for 12M Mailchimp users (campaigns, audiences, templates, automations)",
+      "Each server: pip-installable, MIT licensed, listed on MCP marketplaces",
+    ],
+    github: "https://github.com/AlexlaGuardia/mcp-woocommerce",
+    detail: [
+      {
+        heading: "The gap",
+        content:
+          "The MCP ecosystem has 11,000+ servers, but less than 5% are production-grade. Major platforms like WooCommerce (5M stores) and Mailchimp (12M users) had zero comprehensive MCP coverage. The best existing servers offered 3-5 tools \u2014 barely scratching the API surface. Each server in this suite covers 25-34 tools: full CRUD, reporting, webhooks, system diagnostics, and proper error handling.",
+      },
+      {
+        heading: "Covering what competitors skip",
+        content:
+          "Most MCP servers handle basic reads. These handle the full lifecycle: create products, process refunds, manage webhooks, pull sales reports, check system status. The WooCommerce server covers 8 API categories including reports and analytics that no competitor exposes. The Mailchimp server handles campaign creation through to performance reporting. Every response is structured and predictable \u2014 not raw API dumps.",
+      },
+      {
+        heading: "Distribution strategy",
+        content:
+          "Each server ships simultaneously to PyPI (pip install), GitHub (MIT license, public), and MCP registries (Smithery, mcp.so). The stack is intentionally simple: Python, httpx, FastMCP. No heavy frameworks, no Docker required. Environment variable auth, stdio transport. Point it at your store or account and go.",
+      },
+    ],
+  },
+  {
     title: "mcpcat",
     subtitle: "MCP Server CLI Inspector",
     description:
