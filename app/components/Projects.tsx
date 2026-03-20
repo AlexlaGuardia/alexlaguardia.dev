@@ -74,7 +74,7 @@ const projects = [
       {
         heading: "Architecture",
         content:
-          "8 Rust crates organized as a workspace: core, window (winit), render (wgpu pipeline), input, ECS (custom archetype-based), assets (async loading), physics (rapier3d), and engine. Every component is serializable and physics is deterministic \u2014 designed for multiplayer from day one. The philosophy: Rust for the engine, Lua for the game. A scripting layer lets gameplay logic iterate without recompiling the engine.",
+          "8 Rust crates organized as a workspace: core, window (winit), render (wgpu pipeline), input, ECS (custom archetype-based), assets (async loading), physics (rapier3d), and script (Lua). Every component is serializable and physics is deterministic \u2014 designed for multiplayer from day one. The philosophy: Rust for the engine, Lua for the game. A scripting layer lets gameplay logic iterate without recompiling the engine.",
       },
     ],
   },
@@ -156,7 +156,7 @@ const projects = [
     title: "Guardia MCP",
     subtitle: "Model Context Protocol Server",
     description:
-      "A custom MCP server exposing 70+ tools across business operations, trading, creative writing, and infrastructure. Features frame-based filtering \u2014 each interface sees only the tools relevant to its context.",
+      "A custom MCP server exposing 95+ tools across business operations, trading, creative writing, and infrastructure. Features frame-based filtering \u2014 each interface sees only the tools relevant to its context.",
     tech: ["Python", "MCP Protocol", "SSE Transport", "OAuth", "Tool Registry"],
     highlights: [
       "70+ tools organized by domain with decorator-based auto-registration",
@@ -197,7 +197,7 @@ const projects = [
     highlights: [
       "7 modules: signals, frames, registry, awareness, daemon, db, cli",
       "Frame-based filtering: agents see only tools relevant to their context",
-      "2,100+ lines, 48 tests, pip-installable (pip install vigil-agent)",
+      "1,800+ lines, 48 tests, pip-installable (pip install vigil-agent)",
     ],
     github: "https://github.com/AlexlaGuardia/Vigil",
     detail: [
@@ -232,7 +232,7 @@ const projects = [
     ],
     highlights: [
       "mcp-woocommerce: 34 tools for 5M+ WooCommerce stores (products, orders, customers, reports, webhooks)",
-      "mcp-mailchimp: 28 tools for 12M Mailchimp users (campaigns, audiences, templates, automations)",
+      "mcp-mailchimp: 33 tools for 12M Mailchimp users (campaigns, audiences, templates, automations)",
       "Each server: pip-installable, MIT licensed, listed on MCP marketplaces",
     ],
     github: "https://github.com/AlexlaGuardia/mcp-woocommerce",
