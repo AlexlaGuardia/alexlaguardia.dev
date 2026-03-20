@@ -133,7 +133,6 @@ const projects = [
       "Semantic memory with cosine similarity search and hybrid recall",
       "Context compaction: extracts facts, drops noise, creates continuity across sessions",
     ],
-    github: "https://github.com/AlexlaGuardia/Akatskii",
     detail: [
       {
         heading: "The routing problem",
