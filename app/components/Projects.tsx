@@ -159,7 +159,7 @@ const projects = [
       "A custom MCP server exposing 95+ tools across business operations, trading, creative writing, and infrastructure. Features frame-based filtering \u2014 each interface sees only the tools relevant to its context.",
     tech: ["Python", "MCP Protocol", "SSE Transport", "OAuth", "Tool Registry"],
     highlights: [
-      "70+ tools organized by domain with decorator-based auto-registration",
+      "95+ tools organized by domain with decorator-based auto-registration",
       "Frame filtering: core (14), serberus (23), paradise (25), luna (55), all (95+)",
       "Bridges AI assistants to every system in the stack via a single protocol",
     ],
