@@ -221,30 +221,31 @@ const projects = [
     title: "MCP Server Suite",
     subtitle: "Premium MCP Servers for Major Platforms",
     description:
-      "Production-grade MCP servers for underserved SaaS platforms. Each server exposes 25-34 tools with full CRUD, reports, webhooks, and system diagnostics \u2014 filling gaps where existing servers offer 3-5 tools at most.",
+      "Production-grade MCP servers for underserved SaaS platforms. Each server exposes 25-34 tools with full CRUD, reports, and system diagnostics \u2014 filling gaps where 12,000+ existing servers offer 3-5 tools at most.",
     tech: [
       "Python",
       "MCP Protocol",
       "httpx",
+      "OAuth2",
       "REST APIs",
       "PyPI",
     ],
     highlights: [
+      "mcp-freshbooks: 25 tools for 30M FreshBooks users (invoices, clients, expenses, payments, time tracking, reports) with full OAuth2",
       "mcp-woocommerce: 34 tools for 5M+ WooCommerce stores (products, orders, customers, reports, webhooks)",
       "mcp-mailchimp: 33 tools for 12M Mailchimp users (campaigns, audiences, templates, automations)",
-      "Each server: pip-installable, MIT licensed, listed on MCP marketplaces",
     ],
     github: "https://github.com/AlexlaGuardia/mcp-woocommerce",
     detail: [
       {
         heading: "The gap",
         content:
-          "The MCP ecosystem has 11,000+ servers, but less than 5% are production-grade. Major platforms like WooCommerce (5M stores) and Mailchimp (12M users) had zero comprehensive MCP coverage. The best existing servers offered 3-5 tools \u2014 barely scratching the API surface. Each server in this suite covers 25-34 tools: full CRUD, reporting, webhooks, system diagnostics, and proper error handling.",
+          "The MCP ecosystem has 12,000+ servers, but less than 5% are production-grade. Major platforms like FreshBooks (30M users), WooCommerce (5M stores), and Mailchimp (12M users) had zero comprehensive MCP coverage. The best existing servers offered 3-5 tools \u2014 barely scratching the API surface. Each server in this suite covers 25-34 tools: full CRUD, reporting, and proper error handling.",
       },
       {
         heading: "Covering what competitors skip",
         content:
-          "Most MCP servers handle basic reads. These handle the full lifecycle: create products, process refunds, manage webhooks, pull sales reports, check system status. The WooCommerce server covers 8 API categories including reports and analytics that no competitor exposes. The Mailchimp server handles campaign creation through to performance reporting. Every response is structured and predictable \u2014 not raw API dumps.",
+          "Most MCP servers handle basic reads. These handle the full lifecycle: create invoices, process payments, manage campaigns, pull financial reports. The FreshBooks server implements full OAuth2 with automatic token refresh \u2014 a complexity barrier that keeps weekend builders out. The WooCommerce server covers 8 API categories including analytics. The Mailchimp server handles campaign creation through performance reporting. Every response is structured and predictable \u2014 not raw API dumps.",
       },
       {
         heading: "Distribution strategy",
