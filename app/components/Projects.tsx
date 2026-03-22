@@ -185,18 +185,20 @@ const projects = [
     title: "Vigil",
     subtitle: "Cognitive Infrastructure for AI Agents",
     description:
-      "An open-source Python library that gives AI agents persistent awareness, memory signals, and frame-based tool filtering. Extracted from a production system running 95+ tools across 6 contexts. Published to PyPI.",
+      "An open-source Python library that gives AI agents persistent awareness, coordinated signals, session handoff, and a knowledge base. Ships with an MCP server, REST API, embedded dashboard, and CLI. Extracted from a production system running 95+ tools across 6 contexts.",
     tech: [
       "Python",
+      "FastAPI",
       "SQLite",
-      "CLI",
+      "MCP Protocol",
+      "htmx",
       "PyPI",
       "MIT License",
     ],
     highlights: [
-      "7 modules: signals, frames, registry, awareness, daemon, db, cli",
-      "Frame-based filtering: agents see only tools relevant to their context",
-      "1,800+ lines, 48 tests, pip-installable (pip install vigil-agent)",
+      "14 modules, 6,600+ lines, 252 tests \u2014 v1.5.0 on PyPI (pip install vigil-agent)",
+      "3 transport modes: MCP stdio, MCP SSE, HTTP REST with embedded dashboard",
+      "Knowledge base, event triggers, signal compaction, session handoff chains",
     ],
     github: "https://github.com/AlexlaGuardia/Vigil",
     detail: [
@@ -206,14 +208,14 @@ const projects = [
           "AI agents today are stateless. Every session starts from zero \u2014 no awareness of what happened last time, no memory of decisions, no understanding of what\u2019s active right now. I built a production system that solved this across 6 different interfaces and 95+ tools. Vigil extracts those patterns into a standalone library anyone can use.",
       },
       {
-        heading: "Signals and awareness",
+        heading: "The full stack",
         content:
-          "Signals are the core primitive \u2014 structured observations that any agent can emit and any other agent can read. An awareness daemon compiles recent signals into a hot context snapshot every 90 seconds, giving every agent a shared picture of system state without polling databases or reading logs. It\u2019s the difference between an agent that asks \u2018what\u2019s happening?\u2019 and one that already knows.",
+          "Vigil ships as a complete cognitive layer. Signals let agents emit structured observations with type-based content budgets. An awareness daemon compiles signals into hot context every 90 seconds. Session handoff chains give agents structured continuity \u2014 what happened, what\u2019s next, who was working. A knowledge base stores persistent facts that survive signal compaction. Event triggers fire actions (webhooks, signals, focus items) when patterns match incoming signals. Everything stores in a single SQLite file with zero external dependencies.",
       },
       {
-        heading: "Frame-based filtering",
+        heading: "Three ways to connect",
         content:
-          "When you have 95 tools, dumping all of them on every request drowns the LLM in schemas. Frames solve this: each context (trading, creative writing, system admin) declares which tools it needs. Discovery is filtered, but execution isn\u2019t \u2014 any tool remains callable when needed. This pattern emerged from real usage and turned out to be genuinely novel in the MCP ecosystem.",
+          "The MCP server exposes 15 tools over stdio or SSE \u2014 connect from Claude Code, Claude Desktop, or Cursor with one line of config. The REST API adds 25 endpoints with Bearer auth and an SSE event stream for real-time signal feeds. The embedded dashboard gives a live web view of awareness state, agents, signals, handoffs, and frames. All three share the same SQLite database, so a signal emitted via MCP shows up in the dashboard instantly.",
       },
     ],
   },
@@ -221,7 +223,7 @@ const projects = [
     title: "MCP Server Suite",
     subtitle: "Premium MCP Servers for Major Platforms",
     description:
-      "Production-grade MCP servers for underserved SaaS platforms. Each server exposes 25-34 tools with full CRUD, reports, and system diagnostics \u2014 filling gaps where 12,000+ existing servers offer 3-5 tools at most.",
+      "Production-grade MCP servers for underserved SaaS platforms. Four servers exposing 25-34 tools each with full CRUD, reports, and system diagnostics \u2014 filling gaps where 12,000+ existing servers offer 3-5 tools at most.",
     tech: [
       "Python",
       "MCP Protocol",
@@ -234,18 +236,19 @@ const projects = [
       "mcp-freshbooks: 25 tools for 30M FreshBooks users (invoices, clients, expenses, payments, time tracking, reports) with full OAuth2",
       "mcp-woocommerce: 34 tools for 5M+ WooCommerce stores (products, orders, customers, reports, webhooks)",
       "mcp-mailchimp: 33 tools for 12M Mailchimp users (campaigns, audiences, templates, automations)",
+      "mcp-activecampaign: 33 tools for 185K+ ActiveCampaign users (contacts, deals, automations, pipelines, campaigns)",
     ],
     github: "https://github.com/AlexlaGuardia/mcp-woocommerce",
     detail: [
       {
         heading: "The gap",
         content:
-          "The MCP ecosystem has 12,000+ servers, but less than 5% are production-grade. Major platforms like FreshBooks (30M users), WooCommerce (5M stores), and Mailchimp (12M users) had zero comprehensive MCP coverage. The best existing servers offered 3-5 tools \u2014 barely scratching the API surface. Each server in this suite covers 25-34 tools: full CRUD, reporting, and proper error handling.",
+          "The MCP ecosystem has 12,000+ servers, but less than 5% are production-grade. Major platforms like FreshBooks (30M users), WooCommerce (5M stores), Mailchimp (12M users), and ActiveCampaign (185K businesses) had zero comprehensive MCP coverage. The best existing servers offered 3-5 tools \u2014 barely scratching the API surface. Each server in this suite covers 25-34 tools: full CRUD, reporting, and proper error handling.",
       },
       {
         heading: "Covering what competitors skip",
         content:
-          "Most MCP servers handle basic reads. These handle the full lifecycle: create invoices, process payments, manage campaigns, pull financial reports. The FreshBooks server implements full OAuth2 with automatic token refresh \u2014 a complexity barrier that keeps weekend builders out. The WooCommerce server covers 8 API categories including analytics. The Mailchimp server handles campaign creation through performance reporting. Every response is structured and predictable \u2014 not raw API dumps.",
+          "Most MCP servers handle basic reads. These handle the full lifecycle: create invoices, process payments, manage campaigns, pull financial reports. The FreshBooks server implements full OAuth2 with automatic token refresh \u2014 a complexity barrier that keeps weekend builders out. The WooCommerce server covers 8 API categories including analytics. The Mailchimp server handles campaign creation through performance reporting. The ActiveCampaign server wraps the entire API v3 surface with built-in rate limiting and auto-retry. Every response is structured and predictable \u2014 not raw API dumps.",
       },
       {
         heading: "Distribution strategy",
