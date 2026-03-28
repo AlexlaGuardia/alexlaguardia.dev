@@ -12,7 +12,7 @@ export function Contact() {
 
       <div className="relative max-w-xl mx-auto text-center">
         <p className="font-mono text-sm text-accent mb-4 tracking-wide">
-          04. What&apos;s Next
+          05. What&apos;s Next
         </p>
         <h2 className="text-4xl font-bold text-foreground mb-6">
           Let&apos;s Build Something

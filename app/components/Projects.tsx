@@ -5,40 +5,46 @@ import { useReveal } from "../hooks/useReveal";
 
 const projects = [
   {
-    title: "Guardia Content",
-    subtitle: "AI-Powered SaaS Platform",
+    title: "Vigil",
+    subtitle: "Cognitive Infrastructure for AI Agents",
     description:
-      "A social media automation platform serving paying clients. Content flows through an AI pipeline — styling, caption generation, quality control, scheduling, and publishing — all orchestrated by named AI agents with isolated worker processes.",
+      "An open-source Python library and hosted cloud platform that gives AI agents persistent awareness, coordinated signals, session handoff, and a knowledge base. Open-source core on PyPI, hosted tier at app.vigil-agent.com with GitHub OAuth, Stripe billing, and per-tenant isolation.",
     tech: [
       "Python",
       "FastAPI",
-      "Next.js",
-      "React",
       "SQLite",
-      "Tailwind",
+      "MCP Protocol",
       "Stripe",
-      "AI Pipeline",
+      "GitHub OAuth",
+      "PyPI",
+      "MIT License",
     ],
     highlights: [
-      "Full content automation: upload to published post with zero manual steps",
-      "Multi-agent architecture: Artemis (style), Mercury (captions), Argus (QC)",
-      "Production SaaS with Stripe billing, OAuth, and custom domain support",
+      "9,200+ lines, 268 tests, 14 modules \u2014 open-source core + hosted cloud tier",
+      "v2.0 Cloud: multi-tenant API, GitHub OAuth, Stripe billing ($9/$29/$99), per-tenant SQLite isolation",
+      "3 transport modes, embedded dashboard, event triggers, signal compaction, session handoff chains",
     ],
+    github: "https://github.com/AlexlaGuardia/Vigil",
     detail: [
       {
-        heading: "The pipeline",
+        heading: "The problem",
         content:
-          "Content enters as a raw upload and flows through a chain of AI agents, each with a single responsibility. Artemis handles visual styling via Replicate SDXL, transforming images to match a client\u2019s brand aesthetic. Mercury generates captions using Groq\u2019s Llama 3.3 70B \u2014 fast, cheap, and surprisingly good at matching brand voice. Argus runs quality control, scoring each piece before it\u2019s allowed to publish. Everything runs as isolated PM2 workers, so a failure in styling doesn\u2019t block caption generation.",
+          "AI agents today are stateless. Every session starts from zero \u2014 no awareness of what happened last time, no memory of decisions, no understanding of what\u2019s active right now. I built a production system that solved this across 6 different interfaces and 95+ tools. Vigil extracts those patterns into a standalone library anyone can use \u2014 and a hosted platform for teams that don\u2019t want to run their own infrastructure.",
       },
       {
-        heading: "Real users, real constraints",
+        heading: "Open-source core",
         content:
-          "This isn\u2019t a side project \u2014 it processes content for paying clients on a recurring schedule. That changes every decision. Error recovery has to be graceful. The scheduling system handles timezone-aware posting windows. Stripe handles billing with tiered plans and add-on services. Custom domain support lets clients serve their content hub on their own domain via Cloudflare for SaaS. When you\u2019re processing someone else\u2019s content on a deadline, reliability isn\u2019t optional.",
+          "Vigil ships as a complete cognitive layer. Signals let agents emit structured observations with type-based content budgets. An awareness daemon compiles signals into hot context every 90 seconds. Session handoff chains give agents structured continuity. A knowledge base stores persistent facts that survive signal compaction. Event triggers fire actions when patterns match incoming signals. Everything stores in a single SQLite file with zero external dependencies. pip install vigil-agent and you\u2019re running in 30 seconds.",
       },
       {
-        heading: "Infrastructure",
+        heading: "Hosted cloud tier",
         content:
-          "Python/FastAPI backend with 48 concurrent PM2 services on a single VPS, Next.js frontend, 7 SQLite databases, and Cloudflare tunnel for zero-port-exposure hosting. The whole thing runs on an 8GB Hetzner box. Resource discipline matters when you\u2019re not throwing money at infrastructure.",
+          "The v2.0 hosted platform at app.vigil-agent.com adds multi-tenancy on top of the open-source core. GitHub OAuth for login, per-tenant SQLite isolation with LRU-cached connections, API key auth with hashed storage, usage metering, and Stripe billing for Pro/Team/Enterprise tiers. Each tenant gets their own isolated Vigil instance \u2014 same awareness daemon, same signal protocol, zero infrastructure to manage. Built the entire hosted backend (1,295 lines across 11 files) in a single session.",
+      },
+      {
+        heading: "Three ways to connect",
+        content:
+          "The MCP server exposes 15 tools over stdio or SSE \u2014 connect from Claude Code, Claude Desktop, or Cursor with one line of config. The REST API adds 25 endpoints with Bearer auth and an SSE event stream for real-time signal feeds. The embedded dashboard gives a live web view of awareness state, agents, signals, handoffs, and frames. All three share the same database, so a signal emitted via MCP shows up in the dashboard instantly. A Python SDK (vigil-client) wraps the REST API with 20+ methods for programmatic access.",
       },
     ],
   },
@@ -115,6 +121,44 @@ const projects = [
     ],
   },
   {
+    title: "Guardia Content",
+    subtitle: "AI-Powered SaaS Platform",
+    description:
+      "A social media automation platform serving paying clients. Content flows through an AI pipeline — styling, caption generation, quality control, scheduling, and publishing — all orchestrated by named AI agents with isolated worker processes.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "Next.js",
+      "React",
+      "SQLite",
+      "Tailwind",
+      "Stripe",
+      "AI Pipeline",
+    ],
+    highlights: [
+      "Full content automation: upload to published post with zero manual steps",
+      "Multi-agent architecture: Artemis (style), Mercury (captions), Argus (QC)",
+      "Production SaaS with Stripe billing, OAuth, and custom domain support",
+    ],
+    detail: [
+      {
+        heading: "The pipeline",
+        content:
+          "Content enters as a raw upload and flows through a chain of AI agents, each with a single responsibility. Artemis handles visual styling via Replicate SDXL, transforming images to match a client\u2019s brand aesthetic. Mercury generates captions using Groq\u2019s Llama 3.3 70B \u2014 fast, cheap, and surprisingly good at matching brand voice. Argus runs quality control, scoring each piece before it\u2019s allowed to publish. Everything runs as isolated PM2 workers, so a failure in styling doesn\u2019t block caption generation.",
+      },
+      {
+        heading: "Real users, real constraints",
+        content:
+          "This isn\u2019t a side project \u2014 it processes content for paying clients on a recurring schedule. That changes every decision. Error recovery has to be graceful. The scheduling system handles timezone-aware posting windows. Stripe handles billing with tiered plans and add-on services. Custom domain support lets clients serve their content hub on their own domain via Cloudflare for SaaS. When you\u2019re processing someone else\u2019s content on a deadline, reliability isn\u2019t optional.",
+      },
+      {
+        heading: "Infrastructure",
+        content:
+          "Python/FastAPI backend with 48 concurrent PM2 services on a single VPS, Next.js frontend, 7 SQLite databases, and Cloudflare tunnel for zero-port-exposure hosting. The whole thing runs on an 8GB Hetzner box. Resource discipline matters when you\u2019re not throwing money at infrastructure.",
+      },
+    ],
+  },
+  {
     title: "Akatskii",
     subtitle: "Cognitive AI Architecture",
     description:
@@ -178,50 +222,6 @@ const projects = [
         heading: "Bridging everything",
         content:
           "Through a single SSE connection, an AI assistant can query databases, restart services, check trading positions, read creative lore, manage client content, and orchestrate background tasks. It turns any MCP-compatible client into an operator for the entire infrastructure. One protocol, one endpoint, every system.",
-      },
-    ],
-  },
-  {
-    title: "Vigil",
-    subtitle: "Cognitive Infrastructure for AI Agents",
-    description:
-      "An open-source Python library and hosted cloud platform that gives AI agents persistent awareness, coordinated signals, session handoff, and a knowledge base. Open-source core on PyPI, hosted tier at app.vigil-agent.com with GitHub OAuth, Stripe billing, and per-tenant isolation.",
-    tech: [
-      "Python",
-      "FastAPI",
-      "SQLite",
-      "MCP Protocol",
-      "Stripe",
-      "GitHub OAuth",
-      "PyPI",
-      "MIT License",
-    ],
-    highlights: [
-      "9,200+ lines, 268 tests, 14 modules \u2014 open-source core + hosted cloud tier",
-      "v2.0 Cloud: multi-tenant API, GitHub OAuth, Stripe billing ($9/$29/$99), per-tenant SQLite isolation",
-      "3 transport modes, embedded dashboard, event triggers, signal compaction, session handoff chains",
-    ],
-    github: "https://github.com/AlexlaGuardia/Vigil",
-    detail: [
-      {
-        heading: "The problem",
-        content:
-          "AI agents today are stateless. Every session starts from zero \u2014 no awareness of what happened last time, no memory of decisions, no understanding of what\u2019s active right now. I built a production system that solved this across 6 different interfaces and 95+ tools. Vigil extracts those patterns into a standalone library anyone can use \u2014 and a hosted platform for teams that don\u2019t want to run their own infrastructure.",
-      },
-      {
-        heading: "Open-source core",
-        content:
-          "Vigil ships as a complete cognitive layer. Signals let agents emit structured observations with type-based content budgets. An awareness daemon compiles signals into hot context every 90 seconds. Session handoff chains give agents structured continuity. A knowledge base stores persistent facts that survive signal compaction. Event triggers fire actions when patterns match incoming signals. Everything stores in a single SQLite file with zero external dependencies. pip install vigil-agent and you\u2019re running in 30 seconds.",
-      },
-      {
-        heading: "Hosted cloud tier",
-        content:
-          "The v2.0 hosted platform at app.vigil-agent.com adds multi-tenancy on top of the open-source core. GitHub OAuth for login, per-tenant SQLite isolation with LRU-cached connections, API key auth with hashed storage, usage metering, and Stripe billing for Pro/Team/Enterprise tiers. Each tenant gets their own isolated Vigil instance \u2014 same awareness daemon, same signal protocol, zero infrastructure to manage. Built the entire hosted backend (1,295 lines across 11 files) in a single session.",
-      },
-      {
-        heading: "Three ways to connect",
-        content:
-          "The MCP server exposes 15 tools over stdio or SSE \u2014 connect from Claude Code, Claude Desktop, or Cursor with one line of config. The REST API adds 25 endpoints with Bearer auth and an SSE event stream for real-time signal feeds. The embedded dashboard gives a live web view of awareness state, agents, signals, handoffs, and frames. All three share the same database, so a signal emitted via MCP shows up in the dashboard instantly. A Python SDK (vigil-client) wraps the REST API with 20+ methods for programmatic access.",
       },
     ],
   },
