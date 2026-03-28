@@ -6,8 +6,8 @@ const posts = [
     slug: "/writing/vigil",
     date: "March 2026",
     summary:
-      "How I extracted cognitive infrastructure from a 95-tool production system into Vigil \u2014 an open-source awareness layer with signals, knowledge, and session handoff.",
-    tags: ["AI Agents", "Python", "MCP", "Open Source"],
+      "How I extracted cognitive infrastructure from a 95-tool production system into Vigil \u2014 from open-source library to hosted cloud platform with multi-tenant isolation, Stripe billing, and GitHub OAuth.",
+    tags: ["AI Agents", "Python", "MCP", "SaaS", "Open Source"],
   },
   {
     title: "I got tired of guessing what my MCP server was doing",

@@ -198,20 +198,60 @@ export default function VigilPost() {
           </p>
 
           <h2 className="text-xl font-semibold text-foreground mt-12 mb-4">
+            From library to cloud platform
+          </h2>
+          <p>
+            The open-source library proved the patterns work. But most teams
+            don&apos;t want to run their own infrastructure. So I built
+            Vigil Cloud &mdash; a hosted platform at app.vigil-agent.com
+            that runs a fully isolated Vigil instance per tenant.
+          </p>
+          <p>
+            The hosted tier adds GitHub OAuth for login, per-tenant SQLite
+            isolation with LRU-cached connections, API key authentication
+            with SHA-256 hashed storage, usage metering, and Stripe billing.
+            Three paid tiers: Pro ($9/mo), Team ($29/mo), Enterprise ($99/mo).
+            Each tenant gets their own awareness daemon, signal history, and
+            knowledge base &mdash; zero shared state.
+          </p>
+          <p>
+            I built the entire multi-tenant backend in a single session:
+            1,295 lines across 11 files in the hosted package. Platform DB
+            for accounts and billing, tenant isolation layer, OAuth flow,
+            dashboard with usage stats and key management, Stripe checkout
+            and webhook handling. First production signal recorded the same
+            night.
+          </p>
+
+          <h2 className="text-xl font-semibold text-foreground mt-12 mb-4">
             By the numbers
           </h2>
           <p>
-            v1.5.0 is live on PyPI. 14 modules, 6,600+ lines, 252 tests. Zero
-            external dependencies for the core &mdash; just Python and SQLite.
-            MCP and FastAPI are optional extras. The whole thing stores in a
-            single file.
+            v2.0 is live. 9,200+ lines across 14 modules, 268 tests. The
+            open-source core is on PyPI with zero external dependencies
+            &mdash; just Python and SQLite. The hosted tier runs at
+            app.vigil-agent.com. A Python SDK (vigil-client) wraps the
+            REST API for programmatic access.
           </p>
 
-          <div className="bg-surface border border-border rounded-lg p-4 font-mono text-sm">
-            <p>pip install vigil-agent</p>
+          <div className="bg-surface border border-border rounded-lg p-4 font-mono text-sm overflow-x-auto space-y-4">
+            <div>
+              <p className="text-accent"># Self-hosted (open source)</p>
+              <p>pip install vigil-agent</p>
+            </div>
+            <div>
+              <p className="text-accent"># Hosted cloud</p>
+              <p>app.vigil-agent.com</p>
+            </div>
           </div>
 
           <div className="mt-12 pt-8 border-t border-border flex flex-wrap gap-4">
+            <a
+              href="https://vigil-agent.com"
+              className="text-sm px-4 py-2 border border-accent/40 text-accent rounded hover:bg-accent/10 transition-colors"
+            >
+              Vigil Cloud &rarr;
+            </a>
             <a
               href="https://github.com/AlexlaGuardia/Vigil"
               className="text-sm px-4 py-2 border border-accent/40 text-accent rounded hover:bg-accent/10 transition-colors"

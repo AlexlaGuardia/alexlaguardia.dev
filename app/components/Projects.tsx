@@ -185,37 +185,43 @@ const projects = [
     title: "Vigil",
     subtitle: "Cognitive Infrastructure for AI Agents",
     description:
-      "An open-source Python library that gives AI agents persistent awareness, coordinated signals, session handoff, and a knowledge base. Ships with an MCP server, REST API, embedded dashboard, and CLI. Extracted from a production system running 95+ tools across 6 contexts.",
+      "An open-source Python library and hosted cloud platform that gives AI agents persistent awareness, coordinated signals, session handoff, and a knowledge base. Open-source core on PyPI, hosted tier at app.vigil-agent.com with GitHub OAuth, Stripe billing, and per-tenant isolation.",
     tech: [
       "Python",
       "FastAPI",
       "SQLite",
       "MCP Protocol",
-      "htmx",
+      "Stripe",
+      "GitHub OAuth",
       "PyPI",
       "MIT License",
     ],
     highlights: [
-      "14 modules, 6,600+ lines, 252 tests \u2014 v1.5.0 on PyPI (pip install vigil-agent)",
-      "3 transport modes: MCP stdio, MCP SSE, HTTP REST with embedded dashboard",
-      "Knowledge base, event triggers, signal compaction, session handoff chains",
+      "9,200+ lines, 268 tests, 14 modules \u2014 open-source core + hosted cloud tier",
+      "v2.0 Cloud: multi-tenant API, GitHub OAuth, Stripe billing ($9/$29/$99), per-tenant SQLite isolation",
+      "3 transport modes, embedded dashboard, event triggers, signal compaction, session handoff chains",
     ],
     github: "https://github.com/AlexlaGuardia/Vigil",
     detail: [
       {
         heading: "The problem",
         content:
-          "AI agents today are stateless. Every session starts from zero \u2014 no awareness of what happened last time, no memory of decisions, no understanding of what\u2019s active right now. I built a production system that solved this across 6 different interfaces and 95+ tools. Vigil extracts those patterns into a standalone library anyone can use.",
+          "AI agents today are stateless. Every session starts from zero \u2014 no awareness of what happened last time, no memory of decisions, no understanding of what\u2019s active right now. I built a production system that solved this across 6 different interfaces and 95+ tools. Vigil extracts those patterns into a standalone library anyone can use \u2014 and a hosted platform for teams that don\u2019t want to run their own infrastructure.",
       },
       {
-        heading: "The full stack",
+        heading: "Open-source core",
         content:
-          "Vigil ships as a complete cognitive layer. Signals let agents emit structured observations with type-based content budgets. An awareness daemon compiles signals into hot context every 90 seconds. Session handoff chains give agents structured continuity \u2014 what happened, what\u2019s next, who was working. A knowledge base stores persistent facts that survive signal compaction. Event triggers fire actions (webhooks, signals, focus items) when patterns match incoming signals. Everything stores in a single SQLite file with zero external dependencies.",
+          "Vigil ships as a complete cognitive layer. Signals let agents emit structured observations with type-based content budgets. An awareness daemon compiles signals into hot context every 90 seconds. Session handoff chains give agents structured continuity. A knowledge base stores persistent facts that survive signal compaction. Event triggers fire actions when patterns match incoming signals. Everything stores in a single SQLite file with zero external dependencies. pip install vigil-agent and you\u2019re running in 30 seconds.",
+      },
+      {
+        heading: "Hosted cloud tier",
+        content:
+          "The v2.0 hosted platform at app.vigil-agent.com adds multi-tenancy on top of the open-source core. GitHub OAuth for login, per-tenant SQLite isolation with LRU-cached connections, API key auth with hashed storage, usage metering, and Stripe billing for Pro/Team/Enterprise tiers. Each tenant gets their own isolated Vigil instance \u2014 same awareness daemon, same signal protocol, zero infrastructure to manage. Built the entire hosted backend (1,295 lines across 11 files) in a single session.",
       },
       {
         heading: "Three ways to connect",
         content:
-          "The MCP server exposes 15 tools over stdio or SSE \u2014 connect from Claude Code, Claude Desktop, or Cursor with one line of config. The REST API adds 25 endpoints with Bearer auth and an SSE event stream for real-time signal feeds. The embedded dashboard gives a live web view of awareness state, agents, signals, handoffs, and frames. All three share the same SQLite database, so a signal emitted via MCP shows up in the dashboard instantly.",
+          "The MCP server exposes 15 tools over stdio or SSE \u2014 connect from Claude Code, Claude Desktop, or Cursor with one line of config. The REST API adds 25 endpoints with Bearer auth and an SSE event stream for real-time signal feeds. The embedded dashboard gives a live web view of awareness state, agents, signals, handoffs, and frames. All three share the same database, so a signal emitted via MCP shows up in the dashboard instantly. A Python SDK (vigil-client) wraps the REST API with 20+ methods for programmatic access.",
       },
     ],
   },
