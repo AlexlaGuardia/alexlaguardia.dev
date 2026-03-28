@@ -1,117 +1,105 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useMemo } from "react";
 
-const CYCLE = [
-  "AI pipelines.",
-  "trading systems.",
-  "game engines.",
-  "cognitive architectures.",
-  "things that think.",
-];
+// Deterministic pseudo-random — avoids hydration mismatch
+function seededRandom(seed: number) {
+  const x = Math.sin(seed + 1) * 10000;
+  return x - Math.floor(x);
+}
 
-const TYPING_SPEED = 55;    // ms per char
-const DELETING_SPEED = 28;  // ms per char
-const PAUSE_AFTER_TYPE = 1800;
-const PAUSE_AFTER_DELETE = 300;
+interface Star {
+  id: number;
+  top: string;
+  left: string;
+  size: number;
+  opacity: number;
+  delay: string;
+  duration: string;
+}
+
+function useStars(count: number): Star[] {
+  return useMemo(() => {
+    return Array.from({ length: count }, (_, i) => ({
+      id: i,
+      top: `${seededRandom(i * 3) * 100}%`,
+      left: `${seededRandom(i * 3 + 1) * 100}%`,
+      size: 1 + seededRandom(i * 3 + 2) * 2,
+      opacity: 0.3 + seededRandom(i * 7) * 0.5,
+      delay: `${(seededRandom(i * 5) * 8).toFixed(2)}s`,
+      duration: `${(3 + seededRandom(i * 11) * 5).toFixed(2)}s`,
+    }));
+  }, [count]);
+}
 
 export function Hero() {
-  const [displayed, setDisplayed] = useState("");
-  const [cycleIndex, setCycleIndex] = useState(0);
-  const [phase, setPhase] = useState<"typing" | "pausing" | "deleting" | "waiting">("typing");
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  // Typewriter engine
-  useEffect(() => {
-    const target = CYCLE[cycleIndex];
-    let timeout: ReturnType<typeof setTimeout>;
-
-    if (phase === "typing") {
-      if (displayed.length < target.length) {
-        timeout = setTimeout(() => {
-          setDisplayed(target.slice(0, displayed.length + 1));
-        }, TYPING_SPEED);
-      } else {
-        timeout = setTimeout(() => setPhase("deleting"), PAUSE_AFTER_TYPE);
-      }
-    } else if (phase === "deleting") {
-      if (displayed.length > 0) {
-        timeout = setTimeout(() => {
-          setDisplayed(displayed.slice(0, -1));
-        }, DELETING_SPEED);
-      } else {
-        timeout = setTimeout(() => {
-          setCycleIndex((i) => (i + 1) % CYCLE.length);
-          setPhase("typing");
-        }, PAUSE_AFTER_DELETE);
-      }
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayed, phase, cycleIndex]);
-
-  // Ambient grid parallax — subtle, ~8px max shift
-  useEffect(() => {
-    const el = gridRef.current;
-    if (!el) return;
-
-    const onMouseMove = (e: MouseEvent) => {
-      const cx = window.innerWidth / 2;
-      const cy = window.innerHeight / 2;
-      const dx = ((e.clientX - cx) / cx) * 8;
-      const dy = ((e.clientY - cy) / cy) * 8;
-      el.style.transform = `translate(${dx}px, ${dy}px)`;
-    };
-
-    window.addEventListener("mousemove", onMouseMove, { passive: true });
-    return () => window.removeEventListener("mousemove", onMouseMove);
-  }, []);
+  const stars = useStars(130);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
-      {/* Ambient grid */}
-      <div ref={gridRef} className="hero-grid" aria-hidden="true" />
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+      {/* Starfield */}
+      <div className="starfield" aria-hidden="true">
+        {stars.map((star) => (
+          <span
+            key={star.id}
+            className="star"
+            style={{
+              top: star.top,
+              left: star.left,
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              opacity: star.opacity,
+              animationDelay: star.delay,
+              animationDuration: star.duration,
+              willChange: "opacity",
+            }}
+          />
+        ))}
+      </div>
 
-      <div className="relative max-w-3xl">
-        <p className="hero-line hero-line-1 font-mono text-sm text-accent mb-4 tracking-wide">
-          Hi, my name is
-        </p>
-        <h1 className="hero-line hero-line-2 text-5xl md:text-7xl font-bold text-foreground leading-tight">
-          Alex LaGuardia.
-        </h1>
-        <h2 className="hero-line hero-line-3 text-3xl md:text-5xl font-bold text-muted mt-2 leading-tight grid">
-          {/* Invisible spacer — reserves height for the longest phrase */}
-          <span className="invisible col-start-1 row-start-1" aria-hidden="true">
-            I build cognitive architectures.
-          </span>
-          <span className="col-start-1 row-start-1">
-            I build{" "}
-            <span className="text-foreground">
-              {displayed}
-              <span className="typewriter-cursor" aria-hidden="true" />
-            </span>
-          </span>
-        </h2>
-        <p className="hero-line hero-line-4 mt-6 max-w-xl text-muted leading-relaxed text-lg">
-          Full-stack software engineer specializing in AI-powered systems,
-          production platforms, and low-level engine development. I turn ideas
-          into running software — from React frontends to Rust game engines to
-          multi-agent cognitive architectures.
-        </p>
-        <div className="hero-line hero-line-5 mt-10 flex gap-4">
-          <a
-            href="#projects"
-            className="px-6 py-3 bg-accent/10 border border-accent/40 text-accent rounded hover:bg-accent/20 transition-colors text-sm font-medium"
-          >
-            See my work
-          </a>
-          <a
-            href="#contact"
-            className="px-6 py-3 border border-border text-muted rounded hover:text-foreground hover:border-foreground/30 transition-colors text-sm font-medium"
-          >
-            Get in touch
-          </a>
+      {/* Business card flip-in */}
+      <div className="business-card-wrap">
+        <div className="business-card">
+          {/* Top row: name + title */}
+          <div className="bc-top">
+            <h1 className="bc-name">Alex LaGuardia</h1>
+            <p className="bc-title">Software Engineer</p>
+          </div>
+
+          {/* Divider */}
+          <div className="bc-divider" aria-hidden="true" />
+
+          {/* One-liner */}
+          <p className="bc-tagline">
+            AI systems &nbsp;·&nbsp; production platforms &nbsp;·&nbsp; game engines
+          </p>
+
+          {/* Contact row */}
+          <div className="bc-contact">
+            <span className="bc-mono">alex@alexlaguardia.dev</span>
+            <div className="bc-links">
+              <span className="bc-mono">github.com/alexlaguardia</span>
+              <span className="bc-mono-sep" aria-hidden="true">|</span>
+              <span className="bc-mono">alexlaguardia.dev</span>
+            </div>
+          </div>
         </div>
+      </div>
+
+      {/* CTAs */}
+      <div className="hero-cta">
+        <a
+          href="#projects"
+          className="px-6 py-3 bg-accent/10 border border-accent/40 text-accent rounded hover:bg-accent/20 transition-colors text-sm font-medium"
+        >
+          See my work
+        </a>
+        <a
+          href="#contact"
+          className="px-6 py-3 border border-border text-muted rounded hover:text-foreground hover:border-foreground/30 transition-colors text-sm font-medium"
+        >
+          Get in touch
+        </a>
       </div>
     </section>
   );

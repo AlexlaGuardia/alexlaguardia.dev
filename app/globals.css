@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0a0a0a;
-  --color-foreground: #e5e5e5;
-  --color-muted: #737373;
+  --color-background: #0d0b09;
+  --color-foreground: #e8e4df;
+  --color-muted: #8a7e73;
   --color-accent: #d97706;
   --color-accent-hover: #f59e0b;
-  --color-surface: #141414;
-  --color-border: #262626;
+  --color-surface: #171412;
+  --color-border: #2a2520;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -42,7 +42,139 @@ body {
   background: #404040;
 }
 
-/* ─── Hero stagger entrance ─── */
+/* ─── Starfield ─── */
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: #ffffff;
+  animation: twinkle var(--twinkle-duration, 4s) ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: var(--star-opacity, 0.5); }
+  50%       { opacity: calc(var(--star-opacity, 0.5) * 0.25); }
+}
+
+/* ─── Business card flip-in ─── */
+@keyframes card-flip-in {
+  0%   { opacity: 0; transform: perspective(900px) translateY(-100vh) translateZ(-200px) rotateX(160deg) scale(0.7); }
+  10%  { opacity: 1; }
+  /* Falling forward — still rotating, growing closer */
+  40%  { transform: perspective(900px) translateY(-10vh) translateZ(-50px) rotateX(60deg) scale(0.9); }
+  /* Most of the flip done — card approaching face-on */
+  65%  { transform: perspective(900px) translateY(0) translateZ(0) rotateX(-12deg) scale(1.02); }
+  /* Bounce settle */
+  80%  { transform: perspective(900px) translateY(-8px) translateZ(0) rotateX(5deg) scale(1); }
+  90%  { transform: perspective(900px) translateY(2px) translateZ(0) rotateX(-2deg) scale(1); }
+  100% { transform: perspective(900px) translateY(0) translateZ(0) rotateX(0deg) scale(1); }
+}
+
+.business-card-wrap {
+  width: 100%;
+  max-width: 560px;
+  position: relative;
+  z-index: 1;
+  animation: card-flip-in 2.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 0.2s;
+}
+
+.business-card {
+  width: 100%;
+  aspect-ratio: 3.5 / 2;
+  background: #1e1a16;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 5px;
+  padding: clamp(18px, 4vw, 32px) clamp(22px, 5vw, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bc-top {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bc-name {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: #e8e4df;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.bc-title {
+  font-size: clamp(0.7rem, 1.8vw, 0.95rem);
+  color: var(--color-accent);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.bc-divider {
+  height: 1px;
+  background: #3a3530;
+  width: 100%;
+}
+
+.bc-tagline {
+  font-size: clamp(0.7rem, 1.6vw, 0.88rem);
+  color: #9a9088;
+  line-height: 1.4;
+}
+
+.bc-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bc-mono {
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(0.58rem, 1.3vw, 0.72rem);
+  color: #7a7068;
+  letter-spacing: 0.01em;
+}
+
+.bc-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.bc-mono-sep {
+  font-size: 0.6rem;
+  color: #5a5450;
+}
+
+/* ─── Hero CTAs ─── */
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: hero-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 2.8s;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ─── Hero stagger (kept for any other consumers) ─── */
 @keyframes hero-fade-up {
   from {
     opacity: 0;
@@ -52,32 +184,6 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.hero-line {
-  opacity: 0;
-  animation: hero-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-.hero-line-1 { animation-delay: 0.05s; }
-.hero-line-2 { animation-delay: 0.18s; }
-.hero-line-3 { animation-delay: 0.32s; }
-.hero-line-4 { animation-delay: 0.50s; }
-.hero-line-5 { animation-delay: 0.65s; }
-
-/* ─── Typewriter cursor blink ─── */
-@keyframes cursor-blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-
-.typewriter-cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  background: var(--color-accent);
-  vertical-align: text-bottom;
-  margin-left: 3px;
-  animation: cursor-blink 1s step-end infinite;
 }
 
 /* ─── Scroll reveal ─── */
@@ -123,19 +229,7 @@ body {
   animation: detail-fade 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* ─── Hero ambient grid ─── */
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, #262626 1px, transparent 1px),
-    linear-gradient(to bottom, #262626 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 100%);
-  opacity: 0.25;
-  pointer-events: none;
-  transition: transform 0.15s ease-out;
-}
+/* ─── Hero ambient grid (removed — replaced by starfield) ─── */
 
 /* ─── Contact section glow ─── */
 @keyframes ambient-glow {
