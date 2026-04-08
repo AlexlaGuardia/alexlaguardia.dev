@@ -20,8 +20,8 @@ const projects = [
       "MIT License",
     ],
     highlights: [
-      "9,200+ lines, 268 tests, 14 modules \u2014 open-source core + hosted cloud tier",
-      "v2.0 Cloud: multi-tenant API, GitHub OAuth, Stripe billing ($9/$29/$99), per-tenant SQLite isolation",
+      "8,400+ lines, 311 tests, 4 PyPI releases \u2014 open-source core + hosted cloud tier",
+      "v2.2 Cloud: multi-tenant API, GitHub OAuth, Stripe billing ($29/$79/$199), MCPWatch observability, dashboard",
       "3 transport modes, embedded dashboard, event triggers, signal compaction, session handoff chains",
     ],
     github: "https://github.com/AlexlaGuardia/Vigil",
@@ -45,6 +45,85 @@ const projects = [
         heading: "Three ways to connect",
         content:
           "The MCP server exposes 15 tools over stdio or SSE \u2014 connect from Claude Code, Claude Desktop, or Cursor with one line of config. The REST API adds 25 endpoints with Bearer auth and an SSE event stream for real-time signal feeds. The embedded dashboard gives a live web view of awareness state, agents, signals, handoffs, and frames. All three share the same database, so a signal emitted via MCP shows up in the dashboard instantly. A Python SDK (vigil-client) wraps the REST API with 20+ methods for programmatic access.",
+      },
+    ],
+  },
+  {
+    title: "Critik",
+    subtitle: "AI Code Security Scanner",
+    description:
+      "An open-source, two-pass code security scanner built for the vibe-coding era. First pass uses regex and AST to catch patterns. Second pass runs an AI review with full file context to filter false positives and catch logic-level vulnerabilities. Zero config, one command.",
+    tech: [
+      "Python",
+      "Tree-sitter",
+      "Groq",
+      "Llama 3.3 70B",
+      "VS Code Extension",
+      "GitHub Action",
+      "PyPI",
+      "MIT License",
+    ],
+    highlights: [
+      "Two-pass architecture: regex + AST first, then AI review with full file context",
+      "VS Code extension with inline diagnostics, GitHub Action for CI/CD, pre-commit hook",
+      "4,400 lines, 138 tests, custom YAML rules, watch mode, baseline support",
+    ],
+    github: "https://github.com/AlexlaGuardia/critik",
+    devto:
+      "https://dev.to/alexlaguardia",
+    detail: [
+      {
+        heading: "The problem",
+        content:
+          "53% of AI-generated code has security vulnerabilities. Copilot autocompletes SQL injections. Cursor pastes API keys into public files. 35 new CVEs in March 2026 alone from AI-assisted code. Snyk charges $25+/mo. GitHub CodeQL only works on public repos. The indie developer security gap is wide open.",
+      },
+      {
+        heading: "Two-pass scanning",
+        content:
+          "Pattern matching alone has too many false positives. AI alone hallucinates findings. Combining them gets accurate results on cheap infrastructure. Pass one runs regex patterns and Tree-sitter AST parsing to catch hardcoded secrets, SQL injection sinks, XSS vectors, and command injection patterns. Pass two sends flagged files to an LLM (Llama 3.3 70B via Groq) with full file context to confirm, reclassify, or dismiss each finding. The AI sees the whole file, not just the matching line.",
+      },
+      {
+        heading: "Ship everywhere",
+        content:
+          "pip install critik && critik scan. That is the entire setup. The VS Code extension shows findings as inline diagnostics with severity levels and fix suggestions. The GitHub Action runs on every PR. The pre-commit hook catches issues before they reach the repo. Custom YAML rules let teams add their own patterns. Watch mode re-scans on file save. Baseline support lets you mark existing findings as accepted and only flag new ones.",
+      },
+    ],
+  },
+  {
+    title: "Stampwerk",
+    subtitle: "AI Freelancer Business Tool",
+    description:
+      "A $12/mo HoneyBook alternative built after three freelancer tools died in two months. AI writes proposals from 5 questions, contracts auto-generate from accepted proposals, invoices chase themselves with a 3-step follow-up daemon.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "Next.js",
+      "Groq",
+      "Llama 3.3 70B",
+      "Stripe",
+      "SQLite",
+      "Resend",
+    ],
+    highlights: [
+      "AI proposals powered by Llama 3.3 70B \u2014 answer 5 questions, get a structured proposal in 2 minutes",
+      "Connected flow: proposal \u2192 contract \u2192 invoice \u2192 automated follow-up, no manual steps",
+      "3-step AI follow-up daemon sends escalating reminders so you never chase clients",
+    ],
+    detail: [
+      {
+        heading: "The displacement event",
+        content:
+          "HoneyBook hiked prices 89% in 2025 and the loyalty discount expired Feb 2026. AND.CO shut down March 1, 2026. Bonsai got acquired by Zoom. Three displacement events in sixty days. I was paying $29/mo for HoneyBook and using two features: proposals and invoice reminders. Stampwerk does the 80% that matters at $12/mo flat.",
+      },
+      {
+        heading: "AI that actually works",
+        content:
+          "Most freelancer tools bolt on AI as template-fill. Stampwerk uses Groq with Llama 3.3 70B to generate real proposals from five inputs: client name, project type, scope, timeline, and budget. The output is a structured document with scope, deliverables, pricing, and timeline. Not a form letter. When a client accepts, a contract auto-generates with the proposal terms. One-click e-signature. Signed contracts trigger milestone invoices through Stripe.",
+      },
+      {
+        heading: "The daemon",
+        content:
+          "The follow-up daemon is the feature nobody else has. Most tools make you manually hit send reminder. Stampwerk sends a friendly nudge at 3 days overdue, a firmer reminder at 7, and a final notice at 14. Configurable per client. The daemon runs on an hourly cycle, checking all outstanding invoices and sending the appropriate escalation. You do the work. The software chases the money.",
       },
     ],
   },
@@ -229,7 +308,7 @@ const projects = [
     title: "MCP Server Suite",
     subtitle: "Premium MCP Servers for Major Platforms",
     description:
-      "Production-grade MCP servers for underserved SaaS platforms. Four servers exposing 25-34 tools each with full CRUD, reports, and system diagnostics \u2014 filling gaps where 12,000+ existing servers offer 3-5 tools at most.",
+      "Production-grade MCP servers for underserved SaaS platforms. Four servers exposing 53-73 tools each (262 total) with full CRUD, reports, and system diagnostics \u2014 filling gaps where 12,000+ existing servers offer 3-5 tools at most.",
     tech: [
       "Python",
       "MCP Protocol",
@@ -239,10 +318,10 @@ const projects = [
       "PyPI",
     ],
     highlights: [
-      "mcp-freshbooks: 25 tools for 30M FreshBooks users (invoices, clients, expenses, payments, time tracking, reports) with full OAuth2",
-      "mcp-woocommerce: 34 tools for 5M+ WooCommerce stores (products, orders, customers, reports, webhooks)",
-      "mcp-mailchimp: 33 tools for 12M Mailchimp users (campaigns, audiences, templates, automations)",
-      "mcp-activecampaign: 33 tools for 185K+ ActiveCampaign users (contacts, deals, automations, pipelines, campaigns)",
+      "mcp-mailchimp: 71 tools for 12M Mailchimp users (campaigns, audiences, e-commerce, analytics, webhooks, A/B testing)",
+      "mcp-woocommerce: 73 tools for 5M+ WooCommerce stores (products, orders, refunds, reports, shipping, tax, gateways)",
+      "mcp-activecampaign: 65 tools for 185K+ ActiveCampaign users (contacts, deals, campaigns, scoring, segments, forms, goals)",
+      "mcp-freshbooks: 53 tools for 30M FreshBooks users (invoices, recurring billing, 5 report types, workflow tools) with full OAuth2",
     ],
     github: "https://github.com/AlexlaGuardia/mcp-woocommerce",
     detail: [

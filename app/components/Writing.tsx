@@ -2,6 +2,15 @@ import Link from "next/link";
 
 const posts = [
   {
+    title: "Three freelancer tools died in two months. I built the replacement.",
+    slug: "https://dev.to/alexlaguardia/three-freelancer-tools-died-in-two-months-i-built-the-replacement-4dbe",
+    date: "April 2026",
+    summary:
+      "HoneyBook hiked prices 89%. AND.CO shut down. Bonsai got acquired. Building Stampwerk \u2014 AI proposals, auto contracts, smart invoicing at $12/mo.",
+    tags: ["Python", "FastAPI", "AI", "SaaS", "Freelance"],
+    external: true,
+  },
+  {
     title: "Give your AI agents a nervous system",
     slug: "/writing/vigil",
     date: "March 2026",
