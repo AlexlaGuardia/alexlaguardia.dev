@@ -3,7 +3,18 @@
 import { useState } from "react";
 import { useReveal } from "../hooks/useReveal";
 
-const projects = [
+interface Project {
+  title: string;
+  subtitle: string;
+  description: string;
+  tech: string[];
+  highlights: string[];
+  github?: string;
+  devto?: string;
+  detail: { heading: string; content: string }[];
+}
+
+const projects: Project[] = [
   {
     title: "Vigil",
     subtitle: "Cognitive Infrastructure for AI Agents",
@@ -24,7 +35,7 @@ const projects = [
       "v2.2 Cloud: multi-tenant API, GitHub OAuth, Stripe billing ($29/$79/$199), MCPWatch observability, dashboard",
       "3 transport modes, embedded dashboard, event triggers, signal compaction, session handoff chains",
     ],
-    github: "https://github.com/AlexlaGuardia/Vigil",
+    // github: "https://github.com/AlexlaGuardia/Vigil", // hidden: GitHub flagged
     detail: [
       {
         heading: "The problem",
@@ -68,7 +79,7 @@ const projects = [
       "VS Code extension with inline diagnostics, GitHub Action for CI/CD, pre-commit hook",
       "4,400 lines, 138 tests, custom YAML rules, watch mode, baseline support",
     ],
-    github: "https://github.com/AlexlaGuardia/critik",
+    // github: "https://github.com/AlexlaGuardia/critik", // hidden: GitHub flagged
     devto:
       "https://dev.to/alexlaguardia",
     detail: [
@@ -260,7 +271,7 @@ const projects = [
       {
         heading: "The routing problem",
         content:
-          "Different tasks need different LLMs. A quick status check shouldn\u2019t cost the same as deep architectural reasoning. The thought router analyzes incoming requests and selects the optimal model: fast pattern matching to Groq (Llama 3.3 70B), complex reasoning to Claude, vision tasks to Gemini. The router considers complexity, required capabilities, cost, and latency. Most requests resolve on the cheapest model. The ones that need more get it automatically. The routing logic was mature enough to extract into a standalone open-source library \u2014 llm-route (github.com/AlexlaGuardia/llm-route).",
+          "Different tasks need different LLMs. A quick status check shouldn\u2019t cost the same as deep architectural reasoning. The thought router analyzes incoming requests and selects the optimal model: fast pattern matching to Groq (Llama 3.3 70B), complex reasoning to Claude, vision tasks to Gemini. The router considers complexity, required capabilities, cost, and latency. Most requests resolve on the cheapest model. The ones that need more get it automatically. The routing logic was mature enough to extract into a standalone open-source library \u2014 llm-route, published on PyPI.",
       },
       {
         heading: "Memory that persists",
@@ -285,7 +296,7 @@ const projects = [
       "Frame filtering: core (14), serberus (23), paradise (25), luna (55), all (95+)",
       "Bridges AI assistants to every system in the stack via a single protocol",
     ],
-    github: "https://github.com/AlexlaGuardia/guardia-mcp",
+    // github: "https://github.com/AlexlaGuardia/guardia-mcp", // hidden: GitHub flagged
     detail: [
       {
         heading: "The problem with 70+ tools",
@@ -323,7 +334,7 @@ const projects = [
       "mcp-activecampaign: 65 tools for 185K+ ActiveCampaign users (contacts, deals, campaigns, scoring, segments, forms, goals)",
       "mcp-freshbooks: 53 tools for 30M FreshBooks users (invoices, recurring billing, 5 report types, workflow tools) with full OAuth2",
     ],
-    github: "https://github.com/AlexlaGuardia/mcp-woocommerce",
+    // github: "https://github.com/AlexlaGuardia/mcp-woocommerce", // hidden: GitHub flagged
     detail: [
       {
         heading: "The gap",
@@ -353,7 +364,7 @@ const projects = [
       "Auto-detects transport mode (streamable HTTP vs SSE) \u2014 point it at a URL, it figures out the rest",
       "~250 lines across two files. Pip-installable. Fills a tooling gap in the MCP ecosystem.",
     ],
-    github: "https://github.com/AlexlaGuardia/MCPcat",
+    // github: "https://github.com/AlexlaGuardia/MCPcat", // hidden: GitHub flagged
     devto:
       "https://dev.to/alexlaguardia/i-built-a-cli-inspector-for-mcp-servers-2f1m",
     detail: [
@@ -382,7 +393,7 @@ function ProjectCard({
   expanded,
   onToggle,
 }: {
-  project: (typeof projects)[0];
+  project: Project;
   index: number;
   expanded: boolean;
   onToggle: () => void;

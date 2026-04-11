@@ -22,7 +22,7 @@ export function useReveal<T extends HTMLElement>() {
           observer.disconnect();
         }
       },
-      { threshold: 0.12 }
+      { threshold: 0.01 }
     );
 
     observer.observe(el);
