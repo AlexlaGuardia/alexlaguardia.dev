@@ -2,6 +2,14 @@ import Link from "next/link";
 
 const posts = [
   {
+    title: "I built greenhouse software for one customer (on purpose)",
+    slug: "/writing/scionbee",
+    date: "May 2026",
+    summary:
+      "No signup, no billing, no multi-tenant scaffolding. Scionbee is a phone-first PWA for one wholesale grower in Pennsylvania \u2014 the bay grid, the schedule, the Ball Seed weeks, all molded to how the crew actually works.",
+    tags: ["Next.js", "Prisma", "SQLite", "PWA", "Anti-SaaS"],
+  },
+  {
     title: "Three freelancer tools died in two months. I built the replacement.",
     slug: "https://dev.to/alexlaguardia/three-freelancer-tools-died-in-two-months-i-built-the-replacement-4dbe",
     date: "April 2026",
