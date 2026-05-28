@@ -225,11 +225,12 @@ export default function ScionbeePost() {
             asked.
           </p>
           <p>
-            Scionbee has no settings page. The schedule editor knows what a
-            Ball Seed week is because there&apos;s exactly one customer and
-            they use Ball Seed. The map is shaped like Plant 3 because Plant 3
-            is the only plant. The PDF margins match the LeadBee&apos;s
-            printer because someone walked over and asked which printer.
+            Scionbee&apos;s settings page has one toggle: language. The
+            schedule editor knows what a Ball Seed week is because
+            there&apos;s exactly one customer and they use Ball Seed. The
+            map is shaped like Plant 3 because Plant 3 is the only plant.
+            The PDF margins match the LeadBee&apos;s printer because someone
+            walked over and asked which printer.
           </p>
           <p>
             That depth is the product. Trying to sell it to a hundred more
