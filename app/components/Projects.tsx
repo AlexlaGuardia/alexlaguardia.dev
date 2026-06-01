@@ -101,6 +101,56 @@ const projects: Project[] = [
     ],
   },
   {
+    title: "Scionbee",
+    subtitle: "Greenhouse Operations & Compliance Platform",
+    description:
+      "A mobile-first operations app built for a commercial greenhouse crew: bay-level crop tracking, feed/irrigation/spray logging, pesticide re-entry (WPS) compliance, and shrink-loss ROI analytics. Bilingual (English/Spanish), offline-first for the field, with a grounded AI assistant that answers from real site data.",
+    tech: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Prisma",
+      "SQLite",
+      "Tailwind CSS",
+      "PWA / Offline Queue",
+      "Groq / Llama 3.3",
+      "i18n (en/es)",
+    ],
+    highlights: [
+      "Company → Site → House → Bay → Crop model with role-based PIN auth (worker/manager) and full en/es localization",
+      "WPS pesticide compliance: tank-mix spray records, binding re-entry interval (longest REI in the mix), PA applicator-record PDF, 2-year retention",
+      "Shrink ROI dashboard — 2-tap loss capture turns crop losses into live dollars-lost analytics for managers",
+      "Offline-first queue that syncs when back online; the Bee, a grounded AI assistant that answers only from site data and cites its sources",
+    ],
+    detail: [
+      {
+        heading: "The problem",
+        content:
+          "Greenhouses run on paper and memory. Crews hand-water hundreds of bays, log sprays on clipboards, and lose entire trays when a watering gets skipped or a re-entry interval is misjudged. The data that proves loss — and the safety rules that prevent it — live in someone’s head. I built Scionbee for a real commercial greenhouse to put crop tracking, chemical compliance, and loss accounting into one phone-friendly app that a Spanish-speaking field crew can actually use.",
+      },
+      {
+        heading: "Built for the field",
+        content:
+          "Everything is mobile-first and offline-first: workers log placements, waterings, and sprays from the greenhouse floor, and the app queues submissions to sync when signal returns. Auth is a per-area PIN with a profile picker, so a shared device still attributes each action to the right person. The entire interface is localized in English and Spanish because the crew is. The data model mirrors the physical world — Company, Site, House, Bay, Crop — so a manager and a worker are always talking about the same place.",
+      },
+      {
+        heading: "Compliance done right",
+        content:
+          "Pesticide application is regulated under the federal Worker Protection Standard. Scionbee records each application as a tank mix of one or more products, each with its own rate and amount, and computes the binding re-entry interval as the longest REI across the mix — the legally correct rule, not a guess. Restricted-entry windows drive a lockout badge on every affected bay, applications generate a PA Private Applicator Record as a PDF, and a query layer enforces the 2-year retention requirement. Getting REI wrong sends a worker into a treated bay too early; the system is designed so that can’t happen by accident.",
+      },
+      {
+        heading: "Turning loss into dollars",
+        content:
+          "The standout feature is shrink. When a crop is pulled, a worker marks it lost in two taps; placement quantity and per-variety wholesale price turn that into a real dollar figure. Managers get a dashboard showing dollars lost, loss by cause and by crop, and honesty-coverage so the number is trustworthy. It reframes a vague gut feeling (“we lose a lot to neglect”) into a measured P&L line a grower can act on — the capture step at the worker level is what makes the ROI real over a season.",
+      },
+      {
+        heading: "The Bee — grounded AI assistant",
+        content:
+          "A worker can ask the Bee plain questions — “what’s growing in JW5?”, “is this bay safe to enter?”, “what do I spray for powdery mildew?” — in English or Spanish. The retriever pulls only site-scoped facts (bay contents, feed recipes, REI status, spray history, a recommendation guide), tags each with its source, and the model is hard-constrained to answer only from those facts and cite them, or say it doesn’t know. It is retrieval-grounded by design, so it never invents safety or recipe data.",
+      },
+    ],
+  },
+  {
     title: "Stampwerk",
     subtitle: "AI Freelancer Business Tool",
     description:
