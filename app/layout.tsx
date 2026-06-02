@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alex LaGuardia — Software Engineer",
+  title: "Alex LaGuardia | Software Engineer",
   description:
     "Full-stack software engineer building AI-powered systems, game engines, and production platforms. Python, Rust, TypeScript.",
   keywords: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "FastAPI",
   ],
   openGraph: {
-    title: "Alex LaGuardia — Software Engineer",
+    title: "Alex LaGuardia | Software Engineer",
     description:
       "Full-stack software engineer building AI-powered systems, game engines, and production platforms.",
     url: "https://alexlaguardia.dev",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex LaGuardia — Software Engineer",
+    title: "Alex LaGuardia | Software Engineer",
     description:
       "Full-stack software engineer building AI-powered systems, game engines, and production platforms.",
   },
