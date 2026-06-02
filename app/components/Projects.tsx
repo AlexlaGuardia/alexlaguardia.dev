@@ -264,7 +264,7 @@ const projects: Project[] = [
     title: "Guardia Content",
     subtitle: "AI-Powered SaaS Platform",
     description:
-      "A social media automation platform serving paying clients. Content flows through an AI pipeline — styling, caption generation, quality control, scheduling, and publishing — all orchestrated by named AI agents with isolated worker processes.",
+      "A social media automation platform built end-to-end for client billing, with public launch pending Meta platform approval. Content flows through an AI pipeline — styling, caption generation, quality control, scheduling, and publishing — all orchestrated by named AI agents with isolated worker processes.",
     tech: [
       "Python",
       "FastAPI",
@@ -289,7 +289,7 @@ const projects: Project[] = [
       {
         heading: "Real users, real constraints",
         content:
-          "This isn\u2019t a side project \u2014 it processes content for paying clients on a recurring schedule. That changes every decision. Error recovery has to be graceful. The scheduling system handles timezone-aware posting windows. Stripe handles billing with tiered plans and add-on services. Custom domain support lets clients serve their content hub on their own domain via Cloudflare for SaaS. When you\u2019re processing someone else\u2019s content on a deadline, reliability isn\u2019t optional.",
+          "This isn\u2019t a toy \u2014 it\u2019s built to process content for clients on a recurring schedule, and that shaped every decision. Error recovery has to be graceful. The scheduling system handles timezone-aware posting windows. Stripe handles billing with tiered plans and add-on services. Custom domain support lets clients serve their content hub on their own domain via Cloudflare for SaaS. The platform is complete and deployed; public launch is gated on Meta\u2019s app-review approval for the Instagram and Facebook publishing scopes.",
       },
       {
         heading: "Infrastructure",

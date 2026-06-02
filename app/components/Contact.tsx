@@ -18,17 +18,34 @@ export function Contact() {
           Let&apos;s Build Something
         </h2>
         <p className="text-muted leading-relaxed mb-10">
-          I&apos;m currently open to full-stack and AI engineering roles, as
-          well as interesting freelance projects. If you&apos;re building
-          something ambitious and need an engineer who can own the full stack
-          from infrastructure to interface, I&apos;d love to hear about it.
+          I&apos;m looking for <span className="text-foreground font-medium">AI
+          and backend engineering roles</span> — building LLM systems, APIs, and
+          the infrastructure that runs them — and I&apos;m open to ambitious
+          freelance work. If you need an engineer who can own a problem from data
+          model to deployment and actually ship it, let&apos;s talk.
         </p>
-        <a
-          href="mailto:alex@alexlaguardia.dev"
-          className="inline-block px-8 py-4 border border-accent/40 text-accent rounded hover:bg-accent/10 transition-colors font-mono text-sm"
-        >
-          alex@alexlaguardia.dev
-        </a>
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="mailto:alex@alexlaguardia.dev"
+            className="inline-block px-8 py-4 bg-accent/10 border border-accent/40 text-accent rounded hover:bg-accent/20 transition-colors font-mono text-sm"
+          >
+            alex@alexlaguardia.dev
+          </a>
+          <a
+            href="/resume"
+            className="inline-block px-6 py-4 border border-border text-muted rounded hover:text-foreground hover:border-accent/30 transition-colors font-mono text-sm"
+          >
+            Resume &rarr;
+          </a>
+          <a
+            href="https://linkedin.com/in/alex-laguardia-a28a37216"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-4 border border-border text-muted rounded hover:text-foreground hover:border-accent/30 transition-colors font-mono text-sm"
+          >
+            LinkedIn &rarr;
+          </a>
+        </div>
       </div>
     </section>
   );
