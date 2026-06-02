@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alex LaGuardia — Resume</title>
+  <title>Alejandro Moreno — Resume</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    @page { size: letter; margin: 0.5in; }
+    @page { size: letter; margin: 0.45in; }
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       color: #1a1a1a;
-      font-size: 10.5pt;
-      line-height: 1.45;
+      font-size: 8.8pt;
+      line-height: 1.18;
       max-width: 8.5in;
       margin: 0 auto;
       padding: 0.5in;
@@ -21,55 +21,59 @@
     a:hover { text-decoration: underline; }
 
     /* Header */
-    .header { margin-bottom: 16px; border-bottom: 2px solid #1a1a1a; padding-bottom: 12px; }
+    .header { margin-bottom: 11px; border-bottom: 2px solid #1a1a1a; padding-bottom: 8px; }
     .header h1 { font-size: 22pt; font-weight: 700; letter-spacing: -0.5px; }
-    .header .title { font-size: 11pt; color: #555; margin-top: 2px; }
+    .header .title { font-size: 11pt; color: #555; margin-top: 2px; font-weight: 600; }
     .header .links { margin-top: 6px; font-size: 9.5pt; color: #555; }
     .header .links span { margin-right: 12px; }
     .header .links a { color: #555; }
+    .header .alias { margin-top: 4px; font-size: 9pt; color: #777; }
 
     /* Sections */
-    .section { margin-bottom: 14px; }
+    .section { margin-bottom: 6px; }
+    .section:last-child { margin-bottom: 0; }
     .section h2 {
-      font-size: 10pt;
+      font-size: 9.5pt;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: #1a1a1a;
       border-bottom: 1px solid #ddd;
       padding-bottom: 3px;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
     /* Summary */
     .summary { font-size: 10pt; color: #333; }
 
     /* Projects */
-    .project { margin-bottom: 10px; }
+    .project { margin-bottom: 5px; }
     .project .project-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; }
     .project h3 { font-size: 10.5pt; font-weight: 600; }
-    .project .tech { font-size: 9pt; color: #777; font-style: italic; }
-    .project .subtitle { font-size: 9.5pt; color: #555; }
-    .project ul { margin-top: 3px; padding-left: 16px; }
-    .project li { font-size: 9.5pt; color: #333; margin-bottom: 1px; }
+    .project .tech { font-size: 8.5pt; color: #777; font-style: italic; }
+    .project .subtitle { font-size: 9pt; color: #555; margin-top: 1px; }
+    .project .subtitle a { color: #555; }
+    .project ul { margin-top: 3px; padding-left: 15px; }
+    .project li { font-size: 9pt; color: #333; margin-bottom: 0; }
 
     /* Skills */
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 24px; }
     .skill-cat { font-size: 9.5pt; }
     .skill-cat strong { font-size: 9.5pt; color: #1a1a1a; }
     .skill-cat span { color: #555; }
+
+    .also { font-size: 9.5pt; color: #333; }
+    .also strong { color: #1a1a1a; }
 
     /* Print */
     @media print {
       body { padding: 0; }
       a { color: #1a1a1a; }
-      .no-print { display: none; }
+      .no-print { display: none !important; }
     }
 
-    /* Back link */
-    .back-link {
-      position: fixed;
-      top: 16px;
-      right: 16px;
+    /* Floating controls */
+    .controls { position: fixed; top: 16px; right: 16px; display: flex; gap: 8px; }
+    .controls a {
       font-size: 9pt;
       color: #777;
       text-decoration: none;
@@ -78,117 +82,128 @@
       border-radius: 4px;
       background: white;
     }
-    .back-link:hover { color: #1a1a1a; border-color: #999; text-decoration: none; }
+    .controls a:hover { color: #1a1a1a; border-color: #999; text-decoration: none; }
+    .controls a.primary { color: #fff; background: #1a1a1a; border-color: #1a1a1a; }
+    .controls a.primary:hover { background: #333; }
   </style>
 </head>
 <body>
 
-<a href="https://alexlaguardia.dev" class="back-link no-print">&larr; Back to Portfolio</a>
+<div class="controls no-print">
+  <a href="/resume.pdf" download class="primary">&darr; Download PDF</a>
+  <a href="https://alexlaguardia.dev">&larr; Portfolio</a>
+</div>
 
 <div class="header">
-  <h1>Alex LaGuardia</h1>
-  <div class="title">Full-Stack Software Engineer</div>
+  <h1>Alejandro Moreno</h1>
+  <div class="title">AI / Backend Engineer</div>
   <div class="links">
-    <span><a href="https://alexlaguardia.dev">alexlaguardia.dev</a></span>
+    <span><a href="mailto:alex@alexlaguardia.dev">alex@alexlaguardia.dev</a></span>
+    <span>(717) 376-7970</span>
     <span>Pennsylvania, USA</span>
+    <span><a href="https://alexlaguardia.dev">alexlaguardia.dev</a></span>
     <span><a href="https://github.com/AlexlaGuardia">github.com/AlexlaGuardia</a></span>
     <span><a href="https://linkedin.com/in/alex-laguardia-a28a37216">LinkedIn</a></span>
   </div>
+  <div class="alias">Open-source work &amp; products published as &ldquo;Alex LaGuardia&rdquo;</div>
 </div>
 
 <div class="section">
   <h2>Summary</h2>
   <p class="summary">
-    Full-stack software engineer specializing in AI systems, backend architecture, and production platforms.
-    Self-taught. 291K lines of production code across 6 projects &mdash; including a SaaS platform with paying
-    customers, a cognitive AI layer with multi-LLM routing, and a 3D game engine built from scratch in Rust.
-    Ships daily on a single VPS running 48 concurrent services.
+    Self-taught AI and backend engineer who designs, ships, and distributes production software end-to-end &mdash;
+    open-source tools on PyPI and the VS Code Marketplace, a hosted multi-tenant SaaS with paying customers, and a
+    cognitive AI layer with multi-LLM routing. Strongest in Python/FastAPI, LLM systems (routing, RAG, MCP, agentic
+    loops), and the backend plumbing that keeps them alive.
   </p>
 </div>
 
 <div class="section">
-  <h2>Technical Projects</h2>
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-cat"><strong>AI / LLM:</strong> <span>Multi-LLM routing (Groq, Claude, Gemini), MCP (servers + clients), agentic tool loops, RAG, embeddings/semantic memory</span></div>
+    <div class="skill-cat"><strong>Languages:</strong> <span>Python (expert), Rust (advanced), TypeScript, SQL, Lua</span></div>
+    <div class="skill-cat"><strong>Backend:</strong> <span>FastAPI, async workers, daemon &amp; queue architecture, SQLite, REST/SSE, OAuth2/JWT, Stripe webhooks</span></div>
+    <div class="skill-cat"><strong>Frontend:</strong> <span>Next.js, React, Tailwind CSS, App Router</span></div>
+    <div class="skill-cat"><strong>Infra / DevOps:</strong> <span>PM2 (multi-service), Cloudflare (tunnels, Pages, CF-for-SaaS), Linux, SSH hardening, multi-tenant isolation</span></div>
+    <div class="skill-cat"><strong>Integrations:</strong> <span>Stripe, Groq, OANDA, Alpaca, Meta Graph API, Resend, Cloudflare API</span></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Selected Projects</h2>
 
   <div class="project">
     <div class="project-header">
-      <h3>Akatskii &mdash; Cognitive AI Architecture</h3>
-      <span class="tech">Python, FastAPI, Gemini, Groq, Claude, MCP</span>
+      <h3>Vigil &mdash; Observability &amp; Awareness Infrastructure for AI Agents</h3>
+      <span class="tech">Python, FastAPI, MCP, SQLite, Stripe</span>
     </div>
-    <div class="subtitle"><a href="https://github.com/AlexlaGuardia/Akatskii">github.com/AlexlaGuardia/Akatskii</a></div>
+    <div class="subtitle">PyPI: vigil-agent &middot; <a href="https://app.vigil-agent.com">app.vigil-agent.com</a> &middot; <a href="https://github.com/AlexlaGuardia/Vigil">github.com/AlexlaGuardia/Vigil</a></div>
     <ul>
-      <li>Hybrid regex + LLM router classifies inputs into 5 thought types, routing to optimal provider by cost and complexity &mdash; 80% of routing instant and free</li>
-      <li>Agentic tool loop executes up to 15 iterations with parallel tool calls via MCP bridge (40+ tools)</li>
-      <li>Memory compaction daemon extracts structured facts and generates episodic snapshots for 3x context compression</li>
-      <li>Background daemons autonomously monitor news, sync calendars, and execute queued tasks via Shadow Runner</li>
+      <li>Open-source package + hosted multi-tenant SaaS: one-line MCP instrumentation (latency p50/95/99, per-tool error rates, silent-failure detection) plus an awareness layer (signal bus, 90s daemon-compiled context, frame-based tool filtering, session handoff)</li>
+      <li>Hosted tier: per-tenant SQLite isolation with LRU-cached connections, GitHub OAuth, hashed API keys, Stripe billing &mdash; ~8,400 lines, 311 tests, 4 PyPI releases</li>
     </ul>
   </div>
 
   <div class="project">
     <div class="project-header">
-      <h3>Guardia Content &mdash; AI-Powered SaaS Platform</h3>
-      <span class="tech">Python, FastAPI, Next.js, React, Stripe, SQLite</span>
+      <h3>Critik &mdash; AI Code Security Scanner</h3>
+      <span class="tech">Python, Tree-sitter, Groq / Llama 3.3 70B</span>
     </div>
-    <div class="subtitle">Production system with paying customers</div>
+    <div class="subtitle">PyPI: critik &middot; VS Code Marketplace &middot; GitHub Action &middot; <a href="https://critik.dev">critik.dev</a></div>
     <ul>
-      <li>Full content pipeline: upload &rarr; AI styling (SDXL) &rarr; caption generation (Llama 3.3 70B) &rarr; quality gate &rarr; scheduling &rarr; multi-platform posting</li>
-      <li>Stripe billing with tiered pricing, Facebook/Instagram OAuth2, custom domain support via Cloudflare for SaaS</li>
-      <li>Next.js 14 frontend with custom design system, client dashboard, admin HQ, and public microsites</li>
-      <li>12 backend services processing content autonomously via PM2</li>
+      <li>Two-pass scanner: regex + AST flag candidates, then an LLM reviews each finding with full-file context to drop false positives and write fixes &mdash; ships as CLI, VS Code extension, GitHub Action, and pre-commit hook</li>
+      <li>Baseline fingerprinting for legacy-codebase adoption, custom YAML rules, watch mode &mdash; ~4,400 lines, 138 tests</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="project-header">
+      <h3>Akatskii &mdash; Cognitive AI Layer</h3>
+      <span class="tech">Python, FastAPI, Groq, Claude, Gemini, fastembed</span>
+    </div>
+    <div class="subtitle">routing extracted to PyPI: llm-route &middot; <a href="https://github.com/AlexlaGuardia/Akatskii">github.com/AlexlaGuardia/Akatskii</a></div>
+    <ul>
+      <li>Hybrid regex + LLM router classifies inputs into 5 thought types and routes by cost/complexity &mdash; ~80% resolve instantly and free; agentic tool loop runs up to 15 iterations with parallel calls over MCP</li>
+      <li>Semantic memory (fastembed/ONNX, hybrid keyword + cosine recall) and a compaction daemon delivering ~3x context compression across sessions</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="project-header">
+      <h3>Guardia Content &mdash; AI SaaS Platform (paying customers)</h3>
+      <span class="tech">Python, FastAPI, Next.js, React, Stripe</span>
+    </div>
+    <div class="subtitle">Production platform with recurring revenue</div>
+    <ul>
+      <li>Social-media automation pipeline: upload &rarr; AI styling (SDXL) &rarr; caption (Llama 3.3 70B) &rarr; quality gate &rarr; schedule &rarr; multi-platform post; Stripe billing, Meta OAuth2, custom domains via Cloudflare-for-SaaS</li>
+      <li>Multi-service backend under PM2 with client dashboard, admin HQ, and public per-client microsites</li>
     </ul>
   </div>
 
   <div class="project">
     <div class="project-header">
       <h3>Guardia MCP &mdash; Model Context Protocol Server</h3>
-      <span class="tech">Python, FastAPI, MCP, OAuth 2.1, SSE</span>
+      <span class="tech">Python, FastAPI, MCP, SSE, OAuth 2.1</span>
     </div>
     <div class="subtitle"><a href="https://github.com/AlexlaGuardia/guardia-mcp">github.com/AlexlaGuardia/guardia-mcp</a></div>
     <ul>
-      <li>70+ tools with decorator-based auto-registration and frame-based access filtering per interface context</li>
-      <li>OAuth 2.1 authentication with JWT, SSE transport, used by 3 AI interfaces as unified tool layer</li>
+      <li>95+ tools with decorator-based auto-registration and frame-based filtering (each interface sees only its relevant subset, saving 50&ndash;90% of tool-definition tokens); OAuth 2.1 + JWT, SSE transport &mdash; the unified tool layer behind 3 AI interfaces</li>
     </ul>
   </div>
 
-  <div class="project">
-    <div class="project-header">
-      <h3>Paradise &mdash; Multi-Strategy Trading System</h3>
-      <span class="tech">Python, OANDA, Alpaca, Polymarket</span>
-    </div>
-    <div class="subtitle">4 autonomous strategies across forex, stocks, and prediction markets</div>
-    <ul>
-      <li>Strategy layer (4 independent agents), execution layer (OANDA forex, Alpaca stocks), three-layer risk oversight</li>
-      <li>Thesis-driven investment pipeline with automated 6-hour research cycles and conviction scoring</li>
-    </ul>
-  </div>
-
-  <div class="project">
-    <div class="project-header">
-      <h3>Supra &mdash; 3D Game Engine</h3>
-      <span class="tech">Rust, wgpu, rapier3d, Custom ECS</span>
-    </div>
-    <div class="subtitle">85K lines of Rust across 8 crates, built from scratch</div>
-    <ul>
-      <li>Custom ECS, wgpu renderer, rapier3d physics, full movement state machine (walk/sprint/slide/jump/wall-run/mantle)</li>
-      <li>Designed for multiplayer from day one with serializable components and deterministic physics</li>
-    </ul>
-  </div>
 </div>
 
 <div class="section">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-cat"><strong>Languages:</strong> <span>Python (expert), Rust (advanced), TypeScript, SQL, Lua</span></div>
-    <div class="skill-cat"><strong>Backend:</strong> <span>FastAPI, async workers, queue pipelines, daemon architecture</span></div>
-    <div class="skill-cat"><strong>Frontend:</strong> <span>Next.js 14, React 18, Tailwind CSS, App Router</span></div>
-    <div class="skill-cat"><strong>AI/ML:</strong> <span>Multi-LLM routing, agentic tool loops, RAG, embeddings, MCP</span></div>
-    <div class="skill-cat"><strong>Infrastructure:</strong> <span>PM2 (48 services), Cloudflare, SQLite, Linux, SSH</span></div>
-    <div class="skill-cat"><strong>APIs:</strong> <span>OANDA, Alpaca, Stripe, Meta Graph, Cloudflare, Resend</span></div>
-  </div>
-</div>
-
-<div class="section">
-  <h2>Education</h2>
-  <p class="summary">Self-taught. Building production software since 2023.</p>
+  <h2>Also Shipped</h2>
+  <p class="also">
+    <strong>Stampwerk</strong> &mdash; live AI freelancer SaaS (stampwerk.com) &middot;
+    <strong>MCP Server Suite</strong> &mdash; 262 tools across 4 PyPI servers &middot;
+    <strong>Supra</strong> &mdash; from-scratch 3D FPS engine in Rust (85K lines, 8 crates) &middot;
+    <strong>Scionbee</strong> &mdash; greenhouse WPS-compliance PWA (Next.js, Prisma) &middot;
+    <strong>Paradise</strong> &mdash; 4-agent multi-strategy trading system &middot;
+    <strong>mcpcat</strong> &amp; <strong>llm-route</strong> &mdash; open-source dev tools (PyPI)
+  </p>
 </div>
 
 </body>
