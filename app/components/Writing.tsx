@@ -6,7 +6,7 @@ const posts = [
     slug: "/writing/scionbee",
     date: "May 2026",
     summary:
-      "No signup, no billing, no multi-tenant scaffolding. Scionbee is a phone-first PWA for one wholesale grower in Pennsylvania \u2014 the bay grid, the schedule, the Ball Seed weeks, all molded to how the crew actually works.",
+      "No signup, no billing, no multi-tenant scaffolding. Scionbee is a phone-first PWA for one wholesale grower in Pennsylvania, the bay grid, the schedule, the Ball Seed weeks, all molded to how the crew actually works.",
     tags: ["Next.js", "Prisma", "SQLite", "PWA", "Anti-SaaS"],
   },
   {
@@ -14,7 +14,7 @@ const posts = [
     slug: "https://dev.to/alexlaguardia/three-freelancer-tools-died-in-two-months-i-built-the-replacement-4dbe",
     date: "April 2026",
     summary:
-      "HoneyBook hiked prices 89%. AND.CO shut down. Bonsai got acquired. Building Stampwerk \u2014 AI proposals, auto contracts, smart invoicing at $12/mo.",
+      "HoneyBook hiked prices 89%. AND.CO shut down. Bonsai got acquired. Building Stampwerk, AI proposals, auto contracts, smart invoicing at $12/mo.",
     tags: ["Python", "FastAPI", "AI", "SaaS", "Freelance"],
     external: true,
   },
@@ -23,7 +23,7 @@ const posts = [
     slug: "/writing/vigil",
     date: "March 2026",
     summary:
-      "How I extracted cognitive infrastructure from a 95-tool production system into Vigil \u2014 from open-source library to hosted cloud platform with multi-tenant isolation, Stripe billing, and GitHub OAuth.",
+      "How I extracted cognitive infrastructure from a 95-tool production system into Vigil, from open-source library to hosted cloud platform with multi-tenant isolation, Stripe billing, and GitHub OAuth.",
     tags: ["AI Agents", "Python", "MCP", "SaaS", "Open Source"],
   },
   {
@@ -31,7 +31,7 @@ const posts = [
     slug: "/writing/mcpcat",
     date: "March 2026",
     summary:
-      "So I built mcpcat — a CLI inspector for MCP servers. The build, the transport detection bug, and why the tooling gap exists.",
+      "So I built mcpcat, a CLI inspector for MCP servers. The build, the transport detection bug, and why the tooling gap exists.",
     tags: ["MCP", "Python", "CLI", "Open Source"],
   },
   {
@@ -44,11 +44,11 @@ const posts = [
     external: true,
   },
   {
-    title: "Managing a WooCommerce store from Claude \u2014 34 MCP tools",
+    title: "Managing a WooCommerce store from Claude, 34 MCP tools",
     slug: "https://dev.to/alexlaguardia/managing-a-woocommerce-store-from-claude-34-mcp-tools-i-wish-existed-3d6l",
     date: "March 2026",
     summary:
-      "34 MCP tools for WooCommerce covering products, orders, customers, reports, and webhooks \u2014 with URL normalization and array response handling.",
+      "34 MCP tools for WooCommerce covering products, orders, customers, reports, and webhooks, with URL normalization and array response handling.",
     tags: ["MCP", "Python", "WooCommerce"],
     external: true,
   },
@@ -57,12 +57,12 @@ const posts = [
     slug: "https://dev.to/alexlaguardia",
     date: "March 2026",
     summary:
-      "The first MCP server for ActiveCampaign \u2014 contacts, deals, automations, pipelines, and campaigns with client-side rate limiting.",
+      "The first MCP server for ActiveCampaign, contacts, deals, automations, pipelines, and campaigns with client-side rate limiting.",
     tags: ["MCP", "Python", "ActiveCampaign"],
     external: true,
   },
   {
-    title: "OAuth2, two APIs, and soft deletes \u2014 building an MCP server for FreshBooks",
+    title: "OAuth2, two APIs, and soft deletes, building an MCP server for FreshBooks",
     slug: "https://dev.to/alexlaguardia",
     date: "March 2026",
     summary:
@@ -75,7 +75,7 @@ const posts = [
     slug: "https://dev.to/alexlaguardia",
     date: "March 2026",
     summary:
-      "Building Akatskii \u2014 a multi-LLM cognitive layer that routes thoughts based on complexity, manages semantic memory, and maintains continuity across sessions.",
+      "Building Akatskii, a multi-LLM cognitive layer that routes thoughts based on complexity, manages semantic memory, and maintains continuity across sessions.",
     tags: ["AI", "LLMs", "Python", "Architecture"],
     external: true,
   },

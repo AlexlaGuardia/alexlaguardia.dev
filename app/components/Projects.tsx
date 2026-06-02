@@ -31,7 +31,7 @@ const projects: Project[] = [
       "MIT License",
     ],
     highlights: [
-      "8,400+ lines, 311 tests, 4 PyPI releases \u2014 open-source core + hosted cloud tier",
+      "8,400+ lines, 311 tests, 4 PyPI releases, open-source core + hosted cloud tier",
       "v2.2 Cloud: multi-tenant API, GitHub OAuth, Stripe billing ($29/$79/$199), MCPWatch observability, dashboard",
       "3 transport modes, embedded dashboard, event triggers, signal compaction, session handoff chains",
     ],
@@ -40,7 +40,7 @@ const projects: Project[] = [
       {
         heading: "The problem",
         content:
-          "AI agents today are stateless. Every session starts from zero \u2014 no awareness of what happened last time, no memory of decisions, no understanding of what\u2019s active right now. I built a production system that solved this across 6 different interfaces and 95+ tools. Vigil extracts those patterns into a standalone library anyone can use \u2014 and a hosted platform for teams that don\u2019t want to run their own infrastructure.",
+          "AI agents today are stateless. Every session starts from zero, no awareness of what happened last time, no memory of decisions, no understanding of what\u2019s active right now. I built a production system that solved this across 6 different interfaces and 95+ tools. Vigil extracts those patterns into a standalone library anyone can use, and a hosted platform for teams that don\u2019t want to run their own infrastructure.",
       },
       {
         heading: "Open-source core",
@@ -50,12 +50,12 @@ const projects: Project[] = [
       {
         heading: "Hosted cloud tier",
         content:
-          "The v2.0 hosted platform at app.vigil-agent.com adds multi-tenancy on top of the open-source core. GitHub OAuth for login, per-tenant SQLite isolation with LRU-cached connections, API key auth with hashed storage, usage metering, and Stripe billing for Pro/Team/Enterprise tiers. Each tenant gets their own isolated Vigil instance \u2014 same awareness daemon, same signal protocol, zero infrastructure to manage. Built the entire hosted backend (1,295 lines across 11 files) in a single session.",
+          "The v2.0 hosted platform at app.vigil-agent.com adds multi-tenancy on top of the open-source core. GitHub OAuth for login, per-tenant SQLite isolation with LRU-cached connections, API key auth with hashed storage, usage metering, and Stripe billing for Pro/Team/Enterprise tiers. Each tenant gets their own isolated Vigil instance, same awareness daemon, same signal protocol, zero infrastructure to manage. Built the entire hosted backend (1,295 lines across 11 files) in a single session.",
       },
       {
         heading: "Three ways to connect",
         content:
-          "The MCP server exposes 15 tools over stdio or SSE \u2014 connect from Claude Code, Claude Desktop, or Cursor with one line of config. The REST API adds 25 endpoints with Bearer auth and an SSE event stream for real-time signal feeds. The embedded dashboard gives a live web view of awareness state, agents, signals, handoffs, and frames. All three share the same database, so a signal emitted via MCP shows up in the dashboard instantly. A Python SDK (vigil-client) wraps the REST API with 20+ methods for programmatic access.",
+          "The MCP server exposes 15 tools over stdio or SSE, connect from Claude Code, Claude Desktop, or Cursor with one line of config. The REST API adds 25 endpoints with Bearer auth and an SSE event stream for real-time signal feeds. The embedded dashboard gives a live web view of awareness state, agents, signals, handoffs, and frames. All three share the same database, so a signal emitted via MCP shows up in the dashboard instantly. A Python SDK (vigil-client) wraps the REST API with 20+ methods for programmatic access.",
       },
     ],
   },
@@ -119,34 +119,34 @@ const projects: Project[] = [
     highlights: [
       "Company → Site → House → Bay → Crop model with role-based PIN auth (worker/manager) and full en/es localization",
       "WPS pesticide compliance: tank-mix spray records, binding re-entry interval (longest REI in the mix), PA applicator-record PDF, 2-year retention",
-      "Shrink ROI dashboard — 2-tap loss capture turns crop losses into live dollars-lost analytics for managers",
+      "Shrink ROI dashboard, 2-tap loss capture turns crop losses into live dollars-lost analytics for managers",
       "Offline-first queue that syncs when back online; the Bee, a grounded AI assistant that answers only from site data and cites its sources",
     ],
     detail: [
       {
         heading: "The problem",
         content:
-          "Greenhouses run on paper and memory. Crews hand-water hundreds of bays, log sprays on clipboards, and lose entire trays when a watering gets skipped or a re-entry interval is misjudged. The data that proves loss — and the safety rules that prevent it — live in someone’s head. I built Scionbee for a real commercial greenhouse to put crop tracking, chemical compliance, and loss accounting into one phone-friendly app that a Spanish-speaking field crew can actually use.",
+          "Greenhouses run on paper and memory. Crews hand-water hundreds of bays, log sprays on clipboards, and lose entire trays when a watering gets skipped or a re-entry interval is misjudged. The data that proves loss, and the safety rules that prevent it, live in someone’s head. I built Scionbee for a real commercial greenhouse to put crop tracking, chemical compliance, and loss accounting into one phone-friendly app that a Spanish-speaking field crew can actually use.",
       },
       {
         heading: "Built for the field",
         content:
-          "Everything is mobile-first and offline-first: workers log placements, waterings, and sprays from the greenhouse floor, and the app queues submissions to sync when signal returns. Auth is a per-area PIN with a profile picker, so a shared device still attributes each action to the right person. The entire interface is localized in English and Spanish because the crew is. The data model mirrors the physical world — Company, Site, House, Bay, Crop — so a manager and a worker are always talking about the same place.",
+          "Everything is mobile-first and offline-first: workers log placements, waterings, and sprays from the greenhouse floor, and the app queues submissions to sync when signal returns. Auth is a per-area PIN with a profile picker, so a shared device still attributes each action to the right person. The entire interface is localized in English and Spanish because the crew is. The data model mirrors the physical world (Company, Site, House, Bay, Crop), so a manager and a worker are always talking about the same place.",
       },
       {
         heading: "Compliance done right",
         content:
-          "Pesticide application is regulated under the federal Worker Protection Standard. Scionbee records each application as a tank mix of one or more products, each with its own rate and amount, and computes the binding re-entry interval as the longest REI across the mix — the legally correct rule, not a guess. Restricted-entry windows drive a lockout badge on every affected bay, applications generate a PA Private Applicator Record as a PDF, and a query layer enforces the 2-year retention requirement. Getting REI wrong sends a worker into a treated bay too early; the system is designed so that can’t happen by accident.",
+          "Pesticide application is regulated under the federal Worker Protection Standard. Scionbee records each application as a tank mix of one or more products, each with its own rate and amount, and computes the binding re-entry interval as the longest REI across the mix, the legally correct rule, not a guess. Restricted-entry windows drive a lockout badge on every affected bay, applications generate a PA Private Applicator Record as a PDF, and a query layer enforces the 2-year retention requirement. Getting REI wrong sends a worker into a treated bay too early; the system is designed so that can’t happen by accident.",
       },
       {
         heading: "Turning loss into dollars",
         content:
-          "The standout feature is shrink. When a crop is pulled, a worker marks it lost in two taps; placement quantity and per-variety wholesale price turn that into a real dollar figure. Managers get a dashboard showing dollars lost, loss by cause and by crop, and honesty-coverage so the number is trustworthy. It reframes a vague gut feeling (“we lose a lot to neglect”) into a measured P&L line a grower can act on — the capture step at the worker level is what makes the ROI real over a season.",
+          "The standout feature is shrink. When a crop is pulled, a worker marks it lost in two taps; placement quantity and per-variety wholesale price turn that into a real dollar figure. Managers get a dashboard showing dollars lost, loss by cause and by crop, and honesty-coverage so the number is trustworthy. It reframes a vague gut feeling (“we lose a lot to neglect”) into a measured P&L line a grower can act on, the capture step at the worker level is what makes the ROI real over a season.",
       },
       {
-        heading: "The Bee — grounded AI assistant",
+        heading: "The Bee: grounded AI assistant",
         content:
-          "A worker can ask the Bee plain questions — “what’s growing in JW5?”, “is this bay safe to enter?”, “what do I spray for powdery mildew?” — in English or Spanish. The retriever pulls only site-scoped facts (bay contents, feed recipes, REI status, spray history, a recommendation guide), tags each with its source, and the model is hard-constrained to answer only from those facts and cite them, or say it doesn’t know. It is retrieval-grounded by design, so it never invents safety or recipe data.",
+          "A worker can ask the Bee plain questions, “what’s growing in JW5?”, “is this bay safe to enter?”, “what do I spray for powdery mildew?”, in English or Spanish. The retriever pulls only site-scoped facts (bay contents, feed recipes, REI status, spray history, a recommendation guide), tags each with its source, and the model is hard-constrained to answer only from those facts and cite them, or say it doesn’t know. It is retrieval-grounded by design, so it never invents safety or recipe data.",
       },
     ],
   },
@@ -166,7 +166,7 @@ const projects: Project[] = [
       "Resend",
     ],
     highlights: [
-      "AI proposals powered by Llama 3.3 70B \u2014 answer 5 questions, get a structured proposal in 2 minutes",
+      "AI proposals powered by Llama 3.3 70B, answer 5 questions, get a structured proposal in 2 minutes",
       "Connected flow: proposal \u2192 contract \u2192 invoice \u2192 automated follow-up, no manual steps",
       "3-step AI follow-up daemon sends escalating reminders so you never chase clients",
     ],
@@ -204,23 +204,23 @@ const projects: Project[] = [
     highlights: [
       "85K+ lines of Rust across 8 crates (render, physics, ECS, input, assets, scripting)",
       "Movement system: walk, sprint, slide, wall-run, wall-bounce, bunny hop, mantle",
-      '"Rust for the engine, Lua for the game" \u2014 clean separation of systems and gameplay',
+      '"Rust for the engine, Lua for the game", clean separation of systems and gameplay',
     ],
     detail: [
       {
         heading: "Why build from scratch?",
         content:
-          "Every game engine makes tradeoffs that become your constraints. I wanted to understand the render pipeline at the metal level \u2014 how frames get to the screen, how physics ticks sync with render ticks, how an ECS actually works under the hood. Building from scratch means owning every decision and every line. When something breaks at 3am, there\u2019s no mystery.",
+          "Every game engine makes tradeoffs that become your constraints. I wanted to understand the render pipeline at the metal level, how frames get to the screen, how physics ticks sync with render ticks, how an ECS actually works under the hood. Building from scratch means owning every decision and every line. When something breaks at 3am, there\u2019s no mystery.",
       },
       {
         heading: "The movement system",
         content:
-          "Movement is the most important system in an FPS. If it doesn\u2019t feel right in the first 10 seconds, players leave. Supra\u2019s movement is a velocity-driven state machine: walk, sprint, slide, jump, air-strafe, bunny hop, wall-run, wall-bounce, and mantle. Each state defines its own physics \u2014 slide has friction decay, wall-run has gravity reduction and a timer, bunny hop preserves momentum on frame-perfect jumps. The goal was a parkour playground that\u2019s fun with zero objectives.",
+          "Movement is the most important system in an FPS. If it doesn\u2019t feel right in the first 10 seconds, players leave. Supra\u2019s movement is a velocity-driven state machine: walk, sprint, slide, jump, air-strafe, bunny hop, wall-run, wall-bounce, and mantle. Each state defines its own physics, slide has friction decay, wall-run has gravity reduction and a timer, bunny hop preserves momentum on frame-perfect jumps. The goal was a parkour playground that\u2019s fun with zero objectives.",
       },
       {
         heading: "Architecture",
         content:
-          "8 Rust crates organized as a workspace: core, window (winit), render (wgpu pipeline), input, ECS (custom archetype-based), assets (async loading), physics (rapier3d), and script (Lua). Every component is serializable and physics is deterministic \u2014 designed for multiplayer from day one. The philosophy: Rust for the engine, Lua for the game. A scripting layer lets gameplay logic iterate without recompiling the engine.",
+          "8 Rust crates organized as a workspace: core, window (winit), render (wgpu pipeline), input, ECS (custom archetype-based), assets (async loading), physics (rapier3d), and script (Lua). Every component is serializable and physics is deterministic, designed for multiplayer from day one. The philosophy: Rust for the engine, Lua for the game. A scripting layer lets gameplay logic iterate without recompiling the engine.",
       },
     ],
   },
@@ -246,17 +246,17 @@ const projects: Project[] = [
       {
         heading: "Four cats, four personalities",
         content:
-          'Each strategy operates independently with its own thesis, timeframe, and risk parameters. Lion is patient \u2014 weekly and daily charts, position trading, thesis-driven entries. Cheetah is fast \u2014 M5 timeframe, London session scalping. Tiger scans Polymarket for prediction market opportunities. Jaguar runs funding rate arbitrage: long spot, short perpetual, delta-neutral, collecting the spread across three exchanges. They don\u2019t coordinate. They don\u2019t need to.',
+          'Each strategy operates independently with its own thesis, timeframe, and risk parameters. Lion is patient, weekly and daily charts, position trading, thesis-driven entries. Cheetah is fast, M5 timeframe, London session scalping. Tiger scans Polymarket for prediction market opportunities. Jaguar runs funding rate arbitrage: long spot, short perpetual, delta-neutral, collecting the spread across three exchanges. They don\u2019t coordinate. They don\u2019t need to.',
       },
       {
         heading: "The birds",
         content:
-          "Risk oversight runs in three layers. The signal quality gate filters entries before they reach execution \u2014 bad thesis, bad risk/reward, no trade. Hawk monitors portfolio-level risk in real-time: position sizing, correlation, exposure limits. Eagle enforces discipline: no revenge trading, no overtrading, mandatory cooldowns after losses. The system protects capital from the most dangerous risk factor in trading \u2014 the trader.",
+          "Risk oversight runs in three layers. The signal quality gate filters entries before they reach execution, bad thesis, bad risk/reward, no trade. Hawk monitors portfolio-level risk in real-time: position sizing, correlation, exposure limits. Eagle enforces discipline: no revenge trading, no overtrading, mandatory cooldowns after losses. The system protects capital from the most dangerous risk factor in trading, the trader.",
       },
       {
         heading: "Paper to production",
         content:
-          "Everything runs in paper trading mode through OANDA and Alpaca. The discipline of treating paper money like real money is the point \u2014 same position sizes, same rules, same journaling. Every position has a documented thesis, automated research refreshes, and clear invalidation criteria. When the track record proves out across market conditions, real capital follows.",
+          "Everything runs in paper trading mode through OANDA and Alpaca. The discipline of treating paper money like real money is the point, same position sizes, same rules, same journaling. Every position has a documented thesis, automated research refreshes, and clear invalidation criteria. When the track record proves out across market conditions, real capital follows.",
       },
     ],
   },
@@ -264,7 +264,7 @@ const projects: Project[] = [
     title: "Guardia Content",
     subtitle: "AI-Powered SaaS Platform",
     description:
-      "A social media automation platform built end-to-end for client billing, with public launch pending Meta platform approval. Content flows through an AI pipeline — styling, caption generation, quality control, scheduling, and publishing — all orchestrated by named AI agents with isolated worker processes.",
+      "A social media automation platform built end-to-end for client billing, with public launch pending Meta platform approval. Content flows through an AI pipeline, styling, caption generation, quality control, scheduling, and publishing, all orchestrated by named AI agents with isolated worker processes.",
     tech: [
       "Python",
       "FastAPI",
@@ -284,12 +284,12 @@ const projects: Project[] = [
       {
         heading: "The pipeline",
         content:
-          "Content enters as a raw upload and flows through a chain of AI agents, each with a single responsibility. Artemis handles visual styling via Replicate SDXL, transforming images to match a client\u2019s brand aesthetic. Mercury generates captions using Groq\u2019s Llama 3.3 70B \u2014 fast, cheap, and surprisingly good at matching brand voice. Argus runs quality control, scoring each piece before it\u2019s allowed to publish. Everything runs as isolated PM2 workers, so a failure in styling doesn\u2019t block caption generation.",
+          "Content enters as a raw upload and flows through a chain of AI agents, each with a single responsibility. Artemis handles visual styling via Replicate SDXL, transforming images to match a client\u2019s brand aesthetic. Mercury generates captions using Groq\u2019s Llama 3.3 70B, fast, cheap, and surprisingly good at matching brand voice. Argus runs quality control, scoring each piece before it\u2019s allowed to publish. Everything runs as isolated PM2 workers, so a failure in styling doesn\u2019t block caption generation.",
       },
       {
         heading: "Real users, real constraints",
         content:
-          "This isn\u2019t a toy \u2014 it\u2019s built to process content for clients on a recurring schedule, and that shaped every decision. Error recovery has to be graceful. The scheduling system handles timezone-aware posting windows. Stripe handles billing with tiered plans and add-on services. Custom domain support lets clients serve their content hub on their own domain via Cloudflare for SaaS. The platform is complete and deployed; public launch is gated on Meta\u2019s app-review approval for the Instagram and Facebook publishing scopes.",
+          "This isn\u2019t a toy, it\u2019s built to process content for clients on a recurring schedule, and that shaped every decision. Error recovery has to be graceful. The scheduling system handles timezone-aware posting windows. Stripe handles billing with tiered plans and add-on services. Custom domain support lets clients serve their content hub on their own domain via Cloudflare for SaaS. The platform is complete and deployed; public launch is gated on Meta\u2019s app-review approval for the Instagram and Facebook publishing scopes.",
       },
       {
         heading: "Infrastructure",
@@ -302,7 +302,7 @@ const projects: Project[] = [
     title: "Akatskii",
     subtitle: "Cognitive AI Architecture",
     description:
-      "A multi-LLM cognitive layer that routes thoughts to different language models based on complexity \u2014 fast pattern matching to Groq, deep reasoning to Claude, vision to Gemini. Features semantic memory with vector embeddings and an agentic tool loop.",
+      "A multi-LLM cognitive layer that routes thoughts to different language models based on complexity, fast pattern matching to Groq, deep reasoning to Claude, vision to Gemini. Features semantic memory with vector embeddings and an agentic tool loop.",
     tech: [
       "Python",
       "FastAPI",
@@ -321,17 +321,17 @@ const projects: Project[] = [
       {
         heading: "The routing problem",
         content:
-          "Different tasks need different LLMs. A quick status check shouldn\u2019t cost the same as deep architectural reasoning. The thought router analyzes incoming requests and selects the optimal model: fast pattern matching to Groq (Llama 3.3 70B), complex reasoning to Claude, vision tasks to Gemini. The router considers complexity, required capabilities, cost, and latency. Most requests resolve on the cheapest model. The ones that need more get it automatically. The routing logic was mature enough to extract into a standalone open-source library \u2014 llm-route, published on PyPI.",
+          "Different tasks need different LLMs. A quick status check shouldn\u2019t cost the same as deep architectural reasoning. The thought router analyzes incoming requests and selects the optimal model: fast pattern matching to Groq (Llama 3.3 70B), complex reasoning to Claude, vision tasks to Gemini. The router considers complexity, required capabilities, cost, and latency. Most requests resolve on the cheapest model. The ones that need more get it automatically. The routing logic was mature enough to extract into a standalone open-source library, llm-route, published on PyPI.",
       },
       {
         heading: "Memory that persists",
         content:
-          "LLMs forget everything between sessions. Akatskii doesn\u2019t. Semantic memory uses fastembed with all-MiniLM-L6-v2 \u2014 a 22MB embedding model running on ONNX Runtime, no PyTorch required. Recall is hybrid: keyword search plus cosine similarity, with a boost for memories found by both methods. Below a 0.25 similarity threshold, results are treated as noise. The result is genuine continuity across conversations.",
+          "LLMs forget everything between sessions. Akatskii doesn\u2019t. Semantic memory uses fastembed with all-MiniLM-L6-v2, a 22MB embedding model running on ONNX Runtime, no PyTorch required. Recall is hybrid: keyword search plus cosine similarity, with a boost for memories found by both methods. Below a 0.25 similarity threshold, results are treated as noise. The result is genuine continuity across conversations.",
       },
       {
         heading: "Context compaction",
         content:
-          "As conversations grow, context windows fill with noise. The compaction layer extracts structured facts \u2014 decisions made, code written, problems identified \u2014 and drops the filler. This compressed context carries forward across sessions, giving continuity without token waste. The system also runs an agentic tool loop: think, decide on a tool, execute, observe, repeat \u2014 until the task is complete or it decides to ask for help.",
+          "As conversations grow, context windows fill with noise. The compaction layer extracts structured facts, decisions made, code written, problems identified, and drops the filler. This compressed context carries forward across sessions, giving continuity without token waste. The system also runs an agentic tool loop: think, decide on a tool, execute, observe, repeat, until the task is complete or it decides to ask for help.",
       },
     ],
   },
@@ -339,7 +339,7 @@ const projects: Project[] = [
     title: "Guardia MCP",
     subtitle: "Model Context Protocol Server",
     description:
-      "A custom MCP server exposing 95+ tools across business operations, trading, creative writing, and infrastructure. Features frame-based filtering \u2014 each interface sees only the tools relevant to its context.",
+      "A custom MCP server exposing 95+ tools across business operations, trading, creative writing, and infrastructure. Features frame-based filtering, each interface sees only the tools relevant to its context.",
     tech: ["Python", "MCP Protocol", "SSE Transport", "OAuth", "Tool Registry"],
     highlights: [
       "95+ tools organized by domain with decorator-based auto-registration",
@@ -351,7 +351,7 @@ const projects: Project[] = [
       {
         heading: "The problem with 70+ tools",
         content:
-          "When an AI assistant connects to a server with 95 tools, it drowns in schemas. Frame-based filtering solves this: each interface declares its context (trading, creative writing, system admin), and the server returns only the relevant tools. My trading interface sees trading tools. My fiction-writing interface sees lore tools. Frames only affect discovery \u2014 all tools remain callable regardless, so an interface can reach across domains when needed.",
+          "When an AI assistant connects to a server with 95 tools, it drowns in schemas. Frame-based filtering solves this: each interface declares its context (trading, creative writing, system admin), and the server returns only the relevant tools. My trading interface sees trading tools. My fiction-writing interface sees lore tools. Frames only affect discovery, all tools remain callable regardless, so an interface can reach across domains when needed.",
       },
       {
         heading: "Auto-registration",
@@ -369,7 +369,7 @@ const projects: Project[] = [
     title: "MCP Server Suite",
     subtitle: "Premium MCP Servers for Major Platforms",
     description:
-      "Production-grade MCP servers for underserved SaaS platforms. Four servers exposing 53-73 tools each (262 total) with full CRUD, reports, and system diagnostics \u2014 filling gaps where 12,000+ existing servers offer 3-5 tools at most.",
+      "Production-grade MCP servers for underserved SaaS platforms. Four servers exposing 53-73 tools each (262 total) with full CRUD, reports, and system diagnostics, filling gaps where 12,000+ existing servers offer 3-5 tools at most.",
     tech: [
       "Python",
       "MCP Protocol",
@@ -389,12 +389,12 @@ const projects: Project[] = [
       {
         heading: "The gap",
         content:
-          "The MCP ecosystem has 12,000+ servers, but less than 5% are production-grade. Major platforms like FreshBooks (30M users), WooCommerce (5M stores), Mailchimp (12M users), and ActiveCampaign (185K businesses) had zero comprehensive MCP coverage. The best existing servers offered 3-5 tools \u2014 barely scratching the API surface. Each server in this suite covers 25-34 tools: full CRUD, reporting, and proper error handling.",
+          "The MCP ecosystem has 12,000+ servers, but less than 5% are production-grade. Major platforms like FreshBooks (30M users), WooCommerce (5M stores), Mailchimp (12M users), and ActiveCampaign (185K businesses) had zero comprehensive MCP coverage. The best existing servers offered 3-5 tools, barely scratching the API surface. Each server in this suite covers 25-34 tools: full CRUD, reporting, and proper error handling.",
       },
       {
         heading: "Covering what competitors skip",
         content:
-          "Most MCP servers handle basic reads. These handle the full lifecycle: create invoices, process payments, manage campaigns, pull financial reports. The FreshBooks server implements full OAuth2 with automatic token refresh \u2014 a complexity barrier that keeps weekend builders out. The WooCommerce server covers 8 API categories including analytics. The Mailchimp server handles campaign creation through performance reporting. The ActiveCampaign server wraps the entire API v3 surface with built-in rate limiting and auto-retry. Every response is structured and predictable \u2014 not raw API dumps.",
+          "Most MCP servers handle basic reads. These handle the full lifecycle: create invoices, process payments, manage campaigns, pull financial reports. The FreshBooks server implements full OAuth2 with automatic token refresh, a complexity barrier that keeps weekend builders out. The WooCommerce server covers 8 API categories including analytics. The Mailchimp server handles campaign creation through performance reporting. The ActiveCampaign server wraps the entire API v3 surface with built-in rate limiting and auto-retry. Every response is structured and predictable, not raw API dumps.",
       },
       {
         heading: "Distribution strategy",
@@ -410,8 +410,8 @@ const projects: Project[] = [
       "A CLI tool that connects to any MCP server and pretty-prints available tools, schemas, and lets you call them interactively. Like curl, but for the Model Context Protocol.",
     tech: ["Python", "Typer", "httpx", "Rich", "MCP Protocol"],
     highlights: [
-      "4 commands: tools, inspect, call, ping \u2014 everything you need to debug an MCP server",
-      "Auto-detects transport mode (streamable HTTP vs SSE) \u2014 point it at a URL, it figures out the rest",
+      "4 commands: tools, inspect, call, ping, everything you need to debug an MCP server",
+      "Auto-detects transport mode (streamable HTTP vs SSE), point it at a URL, it figures out the rest",
       "~250 lines across two files. Pip-installable. Fills a tooling gap in the MCP ecosystem.",
     ],
     // github: "https://github.com/AlexlaGuardia/MCPcat", // hidden: GitHub flagged
@@ -421,7 +421,7 @@ const projects: Project[] = [
       {
         heading: "The gap",
         content:
-          "MCP is new enough that the tooling gap is wide open. When building a 70+ tool MCP server, every schema change meant reading source code or wiring up a test client to verify what was exposed. There was no curl equivalent \u2014 no way to just point at a server and see what\u2019s there. That\u2019s the gap mcpcat fills.",
+          "MCP is new enough that the tooling gap is wide open. When building a 70+ tool MCP server, every schema change meant reading source code or wiring up a test client to verify what was exposed. There was no curl equivalent, no way to just point at a server and see what\u2019s there. That\u2019s the gap mcpcat fills.",
       },
       {
         heading: "Transport detection",
@@ -459,7 +459,7 @@ function ProjectCard({
             : "border-border hover:border-accent/20"
         } ${isEven ? "" : "md:ml-12"}`}
       >
-        {/* Left accent bar — animates in when expanded */}
+        {/* Left accent bar, animates in when expanded */}
         <div className="project-card-bar" aria-hidden="true" />
 
         {/* Clickable header */}
@@ -484,7 +484,7 @@ function ProjectCard({
                 {project.title}
               </h3>
             </div>
-            {/* Chevron — morphs on expand */}
+            {/* Chevron, morphs on expand */}
             <div
               className={`shrink-0 mt-2 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${
                 expanded
@@ -541,7 +541,7 @@ function ProjectCard({
         >
           <div className="overflow-hidden">
             <div className="pt-8 mt-6 border-t border-border">
-              {/* Deep dive sections — staggered fade-in */}
+              {/* Deep dive sections, staggered fade-in */}
               <div className="space-y-6">
                 {project.detail.map((section, i) => (
                   <div

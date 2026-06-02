@@ -19,7 +19,7 @@ export function About() {
             I&apos;m a self-taught software engineer who found his way into code
             through pure curiosity and a refusal to accept &ldquo;that&apos;s
             not possible.&rdquo; What started as tinkering became an obsession
-            with building — not just websites, but complete systems that solve
+            with building, not just websites but complete systems that solve
             real problems.
           </p>
           <p>
@@ -28,14 +28,14 @@ export function About() {
             system with institutional-style risk controls (paper-traded), a game
             engine written from scratch in Rust, and AI systems that route
             thoughts to different language models based on complexity. I
-            don&apos;t just use tools — I build them.
+            don&apos;t just use tools. I build them.
           </p>
           <p>
             My philosophy is simple:{" "}
             <span className="text-foreground font-medium">
               ship things that work, then make them better.
             </span>{" "}
-            I believe in craftsman&apos;s pride — doing it right the first time,
+            I believe in craftsman&apos;s pride: doing it right the first time,
             owning the full problem, and never hiding behind &ldquo;that&apos;s
             not my layer.&rdquo;
           </p>
@@ -48,7 +48,7 @@ export function About() {
         {/* 2026 shipping timeline */}
         <div className="mt-14">
           <h3 className="font-mono text-sm text-accent mb-2 tracking-wide">
-            2026 — A Year of Shipping
+            2026: A Year of Shipping
           </h3>
           <p className="text-muted text-sm mb-8">
             Eleven projects and five distributed packages, built and shipped in
@@ -77,7 +77,7 @@ const timeline = [
     period: "Early 2026",
     title: "Built the core ecosystem",
     detail:
-      "Guardia Content (AI SaaS platform), Guardia MCP (95+ tool server), Akatskii (cognitive AI layer with multi-LLM routing), and Paradise (multi-strategy trading system) — the foundation everything else grew from.",
+      "Guardia Content (AI SaaS platform), Guardia MCP (95+ tool server), Akatskii (cognitive AI layer with multi-LLM routing), and Paradise (multi-strategy trading system). The foundation everything else grew from.",
   },
   {
     period: "Spring 2026",
@@ -89,6 +89,6 @@ const timeline = [
     period: "Mid 2026",
     title: "Distribution at scale & client work",
     detail:
-      "The MCP Server Suite — 262 tools across four PyPI packages — plus Scionbee, an operations and compliance platform built for a commercial greenhouse.",
+      "The MCP Server Suite (262 tools across four PyPI packages), plus Scionbee, an operations and compliance platform built for a commercial greenhouse.",
   },
 ];

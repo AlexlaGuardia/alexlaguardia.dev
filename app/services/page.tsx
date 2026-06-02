@@ -161,8 +161,8 @@ export default function ServicesPage() {
                   className="text-accent hover:text-accent-hover font-medium"
                 >
                   Vigil + MCPWatch
-                </a>{" "}
-                &mdash; open-source AI agent observability. Wraps any Python MCP server (FastMCP and low-level Server) with the same API.
+                </a>
+                : open-source AI agent observability. Wraps any Python MCP server (FastMCP and low-level Server) with the same API.
               </li>
               <li>
                 <a
@@ -172,14 +172,14 @@ export default function ServicesPage() {
                   className="text-accent hover:text-accent-hover font-medium"
                 >
                   Critik
-                </a>{" "}
-                &mdash; AI code security scanner. Two-pass (regex/AST + LLM review). Catches what Copilot ships.
+                </a>
+                : AI code security scanner. Two-pass (regex/AST + LLM review). Catches what Copilot ships.
               </li>
               <li>
-                <span className="text-foreground font-medium">4 production MCP servers</span> &mdash; Mailchimp (71 tools), WooCommerce (73), FreshBooks (53), ActiveCampaign (65). Built, tested, published, distributed.
+                <span className="text-foreground font-medium">4 production MCP servers</span>: Mailchimp (71 tools), WooCommerce (73), FreshBooks (53), ActiveCampaign (65). Built, tested, published, distributed.
               </li>
               <li>
-                <span className="text-foreground font-medium">9 months of dogfooding</span> &mdash; every system I describe runs on my own infrastructure, every day.
+                <span className="text-foreground font-medium">9 months of dogfooding</span>: every system I describe runs on my own infrastructure, every day.
               </li>
             </ul>
           </section>

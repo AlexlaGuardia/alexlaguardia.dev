@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alejandro Moreno — Resume</title>
+  <title>Alejandro Moreno - Resume</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     @page { size: letter; margin: 0.45in; }
@@ -135,43 +135,43 @@
 
   <div class="project">
     <div class="project-header">
-      <h3>Vigil &mdash; Observability &amp; Awareness Infrastructure for AI Agents</h3>
+      <h3>Vigil: Observability &amp; Awareness Infrastructure for AI Agents</h3>
       <span class="tech">Python, FastAPI, MCP, SQLite, Stripe</span>
     </div>
     <div class="subtitle">PyPI: vigil-agent &middot; <a href="https://app.vigil-agent.com">app.vigil-agent.com</a> &middot; <a href="https://github.com/AlexlaGuardia/Vigil">github.com/AlexlaGuardia/Vigil</a></div>
     <ul>
       <li>Open-source package + hosted multi-tenant SaaS: one-line MCP instrumentation (latency p50/95/99, per-tool error rates, silent-failure detection) plus an awareness layer (signal bus, 90s daemon-compiled context, frame-based tool filtering, session handoff)</li>
-      <li>Hosted tier: per-tenant SQLite isolation with LRU-cached connections, GitHub OAuth, hashed API keys, Stripe billing &mdash; ~8,400 lines, 311 tests, 4 PyPI releases</li>
+      <li>Hosted tier: per-tenant SQLite isolation with LRU-cached connections, GitHub OAuth, hashed API keys, Stripe billing, ~8,400 lines, 311 tests, 4 PyPI releases</li>
     </ul>
   </div>
 
   <div class="project">
     <div class="project-header">
-      <h3>Critik &mdash; AI Code Security Scanner</h3>
+      <h3>Critik: AI Code Security Scanner</h3>
       <span class="tech">Python, Tree-sitter, Groq / Llama 3.3 70B</span>
     </div>
     <div class="subtitle">PyPI: critik &middot; VS Code Marketplace &middot; GitHub Action &middot; <a href="https://critik.dev">critik.dev</a></div>
     <ul>
-      <li>Two-pass scanner: regex + AST flag candidates, then an LLM reviews each finding with full-file context to drop false positives and write fixes &mdash; ships as CLI, VS Code extension, GitHub Action, and pre-commit hook</li>
-      <li>Baseline fingerprinting for legacy-codebase adoption, custom YAML rules, watch mode &mdash; ~4,400 lines, 138 tests</li>
+      <li>Two-pass scanner: regex + AST flag candidates, then an LLM reviews each finding with full-file context to drop false positives and write fixes, ships as CLI, VS Code extension, GitHub Action, and pre-commit hook</li>
+      <li>Baseline fingerprinting for legacy-codebase adoption, custom YAML rules, watch mode, ~4,400 lines, 138 tests</li>
     </ul>
   </div>
 
   <div class="project">
     <div class="project-header">
-      <h3>Akatskii &mdash; Cognitive AI Layer</h3>
+      <h3>Akatskii: Cognitive AI Layer</h3>
       <span class="tech">Python, FastAPI, Groq, Claude, Gemini, fastembed</span>
     </div>
     <div class="subtitle">routing extracted to PyPI: llm-route &middot; <a href="https://github.com/AlexlaGuardia/Akatskii">github.com/AlexlaGuardia/Akatskii</a></div>
     <ul>
-      <li>Hybrid regex + LLM router classifies inputs into 5 thought types and routes by cost/complexity &mdash; ~80% resolve instantly and free; agentic tool loop runs up to 15 iterations with parallel calls over MCP</li>
+      <li>Hybrid regex + LLM router classifies inputs into 5 thought types and routes by cost/complexity, ~80% resolve instantly and free; agentic tool loop runs up to 15 iterations with parallel calls over MCP</li>
       <li>Semantic memory (fastembed/ONNX, hybrid keyword + cosine recall) and a compaction daemon delivering ~3x context compression across sessions</li>
     </ul>
   </div>
 
   <div class="project">
     <div class="project-header">
-      <h3>Guardia Content &mdash; AI SaaS Platform</h3>
+      <h3>Guardia Content: AI SaaS Platform</h3>
       <span class="tech">Python, FastAPI, Next.js, React, Stripe</span>
     </div>
     <div class="subtitle">Built end-to-end; public launch pending Meta platform approval</div>
@@ -183,12 +183,12 @@
 
   <div class="project">
     <div class="project-header">
-      <h3>Guardia MCP &mdash; Model Context Protocol Server</h3>
+      <h3>Guardia MCP: Model Context Protocol Server</h3>
       <span class="tech">Python, FastAPI, MCP, SSE, OAuth 2.1</span>
     </div>
     <div class="subtitle"><a href="https://github.com/AlexlaGuardia/guardia-mcp">github.com/AlexlaGuardia/guardia-mcp</a></div>
     <ul>
-      <li>95+ tools with decorator-based auto-registration and frame-based filtering (each interface sees only its relevant subset, saving 50&ndash;90% of tool-definition tokens); OAuth 2.1 + JWT, SSE transport &mdash; the unified tool layer behind 3 AI interfaces</li>
+      <li>95+ tools with decorator-based auto-registration and frame-based filtering (each interface sees only its relevant subset, saving 50&ndash;90% of tool-definition tokens); OAuth 2.1 + JWT, SSE transport, the unified tool layer behind 3 AI interfaces</li>
     </ul>
   </div>
 
@@ -197,12 +197,12 @@
 <div class="section">
   <h2>Also Shipped</h2>
   <p class="also">
-    <strong>Stampwerk</strong> &mdash; live AI freelancer SaaS (stampwerk.com) &middot;
-    <strong>MCP Server Suite</strong> &mdash; 262 tools across 4 PyPI servers &middot;
-    <strong>Supra</strong> &mdash; from-scratch 3D FPS engine in Rust (85K lines, 8 crates) &middot;
-    <strong>Scionbee</strong> &mdash; greenhouse WPS-compliance PWA (Next.js, Prisma) &middot;
-    <strong>Paradise</strong> &mdash; 4-agent multi-strategy trading system &middot;
-    <strong>mcpcat</strong> &amp; <strong>llm-route</strong> &mdash; open-source dev tools (PyPI)
+    <strong>Stampwerk</strong>: live AI freelancer SaaS (stampwerk.com) &middot;
+    <strong>MCP Server Suite</strong>: 262 tools across 4 PyPI servers &middot;
+    <strong>Supra</strong>: from-scratch 3D FPS engine in Rust (85K lines, 8 crates) &middot;
+    <strong>Scionbee</strong>: greenhouse WPS-compliance PWA (Next.js, Prisma) &middot;
+    <strong>Paradise</strong>: 4-agent multi-strategy trading system &middot;
+    <strong>mcpcat</strong> &amp; <strong>llm-route</strong>: open-source dev tools (PyPI)
   </p>
 </div>
 
