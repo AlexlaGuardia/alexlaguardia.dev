@@ -10,8 +10,8 @@
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       color: #1a1a1a;
-      font-size: 8.8pt;
-      line-height: 1.18;
+      font-size: 8.6pt;
+      line-height: 1.12;
       max-width: 8.5in;
       margin: 0 auto;
       padding: 0.5in;
@@ -30,7 +30,7 @@
     .header .alias { margin-top: 4px; font-size: 9pt; color: #777; }
 
     /* Sections */
-    .section { margin-bottom: 6px; }
+    .section { margin-bottom: 4px; }
     .section:last-child { margin-bottom: 0; }
     .section h2 {
       font-size: 9.5pt;
@@ -38,30 +38,30 @@
       letter-spacing: 1.5px;
       color: #1a1a1a;
       border-bottom: 1px solid #ddd;
-      padding-bottom: 3px;
-      margin-bottom: 7px;
+      padding-bottom: 2px;
+      margin-bottom: 5px;
     }
 
     /* Summary */
-    .summary { font-size: 10pt; color: #333; }
+    .summary { font-size: 9.4pt; color: #333; }
 
     /* Projects */
-    .project { margin-bottom: 5px; }
+    .project { margin-bottom: 3px; }
     .project .project-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; }
-    .project h3 { font-size: 10.5pt; font-weight: 600; }
-    .project .tech { font-size: 8.5pt; color: #777; font-style: italic; }
-    .project .subtitle { font-size: 9pt; color: #555; margin-top: 1px; }
+    .project h3 { font-size: 10pt; font-weight: 600; }
+    .project .tech { font-size: 8.3pt; color: #777; font-style: italic; }
+    .project .subtitle { font-size: 8.7pt; color: #555; margin-top: 1px; }
     .project .subtitle a { color: #555; }
-    .project ul { margin-top: 3px; padding-left: 15px; }
-    .project li { font-size: 9pt; color: #333; margin-bottom: 0; }
+    .project ul { margin-top: 2px; padding-left: 15px; }
+    .project li { font-size: 8.7pt; color: #333; margin-bottom: 0; }
 
     /* Skills */
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 24px; }
-    .skill-cat { font-size: 9.5pt; }
-    .skill-cat strong { font-size: 9.5pt; color: #1a1a1a; }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 24px; }
+    .skill-cat { font-size: 9pt; }
+    .skill-cat strong { font-size: 9pt; color: #1a1a1a; }
     .skill-cat span { color: #555; }
 
-    .also { font-size: 9.5pt; color: #333; }
+    .also { font-size: 9pt; color: #333; }
     .also strong { color: #1a1a1a; }
 
     /* Print */
@@ -127,6 +127,7 @@
     <div class="skill-cat"><strong>Frontend:</strong> <span>Next.js, React, Tailwind CSS, App Router</span></div>
     <div class="skill-cat"><strong>Infra / DevOps:</strong> <span>PM2 (multi-service), Cloudflare (tunnels, Pages, CF-for-SaaS), Linux, SSH hardening, multi-tenant isolation</span></div>
     <div class="skill-cat"><strong>Integrations:</strong> <span>Stripe, Groq, OANDA, Alpaca, Meta Graph API, Resend, Cloudflare API</span></div>
+    <div class="skill-cat"><strong>AI Dev Tools:</strong> <span>Claude Code (daily driver); ships most code through a self-built MCP tool layer</span></div>
   </div>
 </div>
 
@@ -192,6 +193,15 @@
     </ul>
   </div>
 
+</div>
+
+<div class="section">
+  <h2>Open Source &amp; Writing</h2>
+  <p class="also">
+    <strong>Community:</strong> contributor to the MCP ecosystem: merged PR to awesome-mcp-servers, plus issue triage and proposed fixes on PrefectHQ/fastmcp &middot;
+    <strong>Distribution:</strong> 8 packages published to PyPI and a VS Code Marketplace extension &middot;
+    <strong>Writing:</strong> 8+ technical articles on building MCP servers &amp; AI-agent infrastructure (Dev.to)
+  </p>
 </div>
 
 <div class="section">
