@@ -101,6 +101,49 @@ const projects: Project[] = [
     ],
   },
   {
+    title: "BatchTrack",
+    subtitle: "Published Shopify App — Perishable Inventory Tracking",
+    description:
+      "A Shopify app that tracks product batches and expiry dates for merchants who sell perishables, with threshold alerts and a daily email digest of what is expiring. Reviewed and approved by Shopify, live and installable on the Shopify App Store with managed billing, OAuth, and GDPR compliance webhooks.",
+    tech: [
+      "Remix",
+      "TypeScript",
+      "React",
+      "Prisma",
+      "SQLite",
+      "Shopify App Bridge",
+      "Polaris",
+      "Managed Billing",
+    ],
+    highlights: [
+      "Passed Shopify's app review (auth, HMAC, GDPR webhooks, TLS, billing) and published to the App Store",
+      "Shopify managed pricing: free tier (up to 10 tracked products) + $9.99/mo Unlimited with a 14-day trial",
+      "Embedded admin in Polaris, daily expiry digest via email, self-hosted under PM2 behind a Cloudflare tunnel",
+    ],
+    detail: [
+      {
+        heading: "The problem",
+        content:
+          "Merchants selling perishables, food, cosmetics, supplements, anything with a shelf life, have no native way in Shopify to track which batches expire when. They find out when a customer complains or when stock is already dead. BatchTrack adds a batch-and-expiry layer on top of their existing catalog: log a batch against a product variant, set the expiry, and get warned before it lapses.",
+      },
+      {
+        heading: "Built on Shopify's real surface",
+        content:
+          "BatchTrack is a full embedded Shopify app, not a mockup. It uses the Shopify App Remix template with OAuth install, App Bridge, and a Polaris UI that renders inside the merchant's admin. Sessions and batch data persist in SQLite via Prisma. It implements the mandatory GDPR compliance webhooks (customer data request, customer redact, shop redact) that Shopify requires before an app can be listed.",
+      },
+      {
+        heading: "Billing the Shopify way",
+        content:
+          "Pricing runs through Shopify Managed Pricing: a free tier capped at ten tracked products and a $9.99/mo Unlimited plan with a 14-day trial, all hosted on Shopify's own pricing page so merchants subscribe without ever leaving the admin. Feature gating reads the merchant's live subscription state to enforce the free-tier cap. Getting this past review meant matching the in-app plan handles to the Partner Dashboard exactly and routing upgrades to the hosted page instead of the Billing API.",
+      },
+      {
+        heading: "Shipped and reviewed",
+        content:
+          "The app passed Shopify's full automated and human review, authentication, redirect handling, HMAC verification, compliance webhooks, TLS, and billing, and is published on the Shopify App Store. It runs self-hosted under PM2 behind a Cloudflare tunnel, with a daily cron that emails each merchant a digest of expiring batches. It is early (no install base yet), but it is a real, externally-reviewed product on a major marketplace.",
+      },
+    ],
+  },
+  {
     title: "Scionbee",
     subtitle: "Greenhouse Operations & Compliance Platform",
     description:
