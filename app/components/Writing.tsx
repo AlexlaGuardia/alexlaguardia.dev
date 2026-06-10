@@ -2,6 +2,14 @@ import Link from "next/link";
 
 const posts = [
   {
+    title: "Same question, three answers: building a governed MCP server",
+    slug: "/writing/warden",
+    date: "June 2026",
+    summary:
+      "Warden is an AI agent over enterprise data with RBAC enforced outside the model, OpenTelemetry traces on every run, and an eval suite where an honest denial scores as a pass. Live public console included.",
+    tags: ["Python", "MCP", "OpenTelemetry", "LLM Evals", "Next.js"],
+  },
+  {
     title: "I built greenhouse software for one customer (on purpose)",
     slug: "/writing/scionbee",
     date: "May 2026",
