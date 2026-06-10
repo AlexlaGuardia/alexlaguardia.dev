@@ -16,6 +16,50 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Warden",
+    subtitle: "Governed MCP Server with Live Evals & Tracing",
+    description:
+      "An AI agent answering questions over enterprise data through a governed Model Context Protocol server. RBAC is enforced outside the model, every run emits OpenTelemetry traces, and an LLM-as-judge eval suite proves the agent stays inside policy. Live public console at warden.alexlaguardia.dev: fire a real agent run, replay its trace, and watch the same question return different answers per role.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "MCP SDK",
+      "OpenTelemetry",
+      "Claude API",
+      "LLM-as-Judge Evals",
+      "SQLite",
+      "Next.js",
+    ],
+    highlights: [
+      "Live click-to-use demo: real Claude agent runs through the governed server, traced end to end",
+      "12/12 eval cases passing: accuracy, faithfulness, RBAC compliance, and honesty-on-denial, judged by a stronger model anchored to a deterministic oracle",
+      "3 governance primitives (resource access, region row-scoping, field redaction) in one policy choke point the model cannot bypass",
+    ],
+    github: "https://github.com/AlexlaGuardia/warden",
+    detail: [
+      {
+        heading: "The problem",
+        content:
+          "Give an AI agent tool access to company data and you inherit two hard questions: who is the agent acting as, and how do you know it behaved? A support agent asking about pipeline numbers must not get an answer the human is not allowed to see, and “it seemed fine in testing” is not something you can take to a security review. Warden is a complete, readable answer to both.",
+      },
+      {
+        heading: "Governance outside the model",
+        content:
+          "The role comes from the session identity, like OAuth token scopes, and every read passes through a single GovernedStore choke point that applies resource-level access, region row-scoping, and field redaction. The model cannot widen its own access by prompting harder. The MCP server exposes four registry/dispatch tools instead of one tool per table, so adding a data source changes the registry, not the tool surface. When policy denies access, tools return a structured access_denied object and the agent is expected to report the limit honestly.",
+      },
+      {
+        heading: "Evals that prove it",
+        content:
+          "A deterministic oracle computes ground truth through the same governance layer, so a correctly-denied answer scores as a pass instead of a miss. Claude Opus judges Claude Sonnet's answers anchored to that reference, cutting self-preference bias, and scores each run on accuracy, faithfulness to retrieved data, RBAC compliance, and honesty about limits. The 12-case golden set covers every governance primitive: 12/12 passing.",
+      },
+      {
+        heading: "Traces and the live console",
+        content:
+          "Every run emits real OpenTelemetry spans with GenAI semantic attributes: a root agent span over each LLM completion and MCP tool call, captured by a custom in-process span processor and persisted to SQLite. The Next.js console replays them on a Gantt timeline, shows tool inputs and outputs with the enforcing role stamped on every result, and includes a side-by-side diff page where the same question is answered as admin, sales, and support. The public live-run endpoint is rate-limited per IP with a global daily budget.",
+      },
+    ],
+  },
+  {
     title: "Vigil",
     subtitle: "Cognitive Infrastructure for AI Agents",
     description:
