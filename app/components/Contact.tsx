@@ -18,11 +18,11 @@ export function Contact() {
           Let&apos;s Build Something
         </h2>
         <p className="text-muted leading-relaxed mb-10">
-          I&apos;m looking for <span className="text-foreground font-medium">AI
-          and backend engineering roles</span>: building LLM systems, APIs, and
-          the infrastructure that runs them. I&apos;m also open to ambitious
-          freelance work. If you need an engineer who can own a problem from data
-          model to deployment and actually ship it, let&apos;s talk.
+          I&apos;m looking for <span className="text-foreground font-medium">full-time
+          AI and backend engineering roles</span>: building LLM systems, APIs, and
+          the infrastructure that runs them. Available to start immediately. If
+          you need an engineer who can own a problem from data model to
+          deployment and actually ship it, let&apos;s talk.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3">
           <a
