@@ -148,6 +148,18 @@
 
   <div class="project">
     <div class="project-header">
+      <h3>Warden: Governed MCP Server for AI Agents</h3>
+      <span class="tech">Python, FastAPI, MCP, RBAC, policy engine</span>
+    </div>
+    <div class="subtitle"><a href="https://warden.alexlaguardia.dev">warden.alexlaguardia.dev</a> &middot; <a href="https://github.com/AlexlaGuardia/warden">github.com/AlexlaGuardia/warden</a></div>
+    <ul>
+      <li>Governance layer that authorizes every agent tool call outside the model: RBAC policy engine with region row-scoping and field-level redaction, so a hallucinating or compromised agent still cannot exceed its grants</li>
+      <li>Grounded eval harness: a deterministic oracle computes ground truth through the governance layer and a stronger model judges a weaker model's answers against that reference; live demo with enforced policies</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="project-header">
       <h3>Critik: AI Code Security Scanner</h3>
       <span class="tech">Python, Tree-sitter, Groq / Llama 3.3 70B</span>
     </div>
@@ -182,17 +194,6 @@
     </ul>
   </div>
 
-  <div class="project">
-    <div class="project-header">
-      <h3>Guardia MCP: Model Context Protocol Server</h3>
-      <span class="tech">Python, FastAPI, MCP, SSE, OAuth 2.1</span>
-    </div>
-    <div class="subtitle"><a href="https://github.com/AlexlaGuardia/guardia-mcp">github.com/AlexlaGuardia/guardia-mcp</a></div>
-    <ul>
-      <li>95+ tools with decorator-based auto-registration and frame-based filtering (each interface sees only its relevant subset, saving 50&ndash;90% of tool-definition tokens); OAuth 2.1 + JWT, SSE transport, the unified tool layer behind 3 AI interfaces</li>
-    </ul>
-  </div>
-
 </div>
 
 <div class="section">
@@ -208,6 +209,7 @@
   <h2>Also Shipped</h2>
   <p class="also">
     <strong>Stampwerk</strong>: live AI freelancer SaaS (stampwerk.com) &middot;
+    <strong>guardia-mcp</strong>: 95+ tools, frame-filtered (50&ndash;90% fewer tokens), OAuth 2.1, behind 3 AI interfaces &middot;
     <strong>MCP Server Suite</strong>: 262 tools across 4 PyPI servers &middot;
     <strong>Supra</strong>: from-scratch 3D FPS engine in Rust (85K lines, 8 crates) &middot;
     <strong>Scionbee</strong>: greenhouse WPS-compliance PWA (Next.js, Prisma) &middot;
