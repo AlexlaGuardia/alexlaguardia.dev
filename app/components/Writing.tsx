@@ -117,7 +117,7 @@ export function Writing() {
                   <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
                     {post.title}
                     {isExternal && (
-                      <span className="inline-block ml-2 text-xs text-muted font-normal">&nearr;</span>
+                      <span className="inline-block ml-2 text-xs text-muted font-normal">{"↗"}</span>
                     )}
                   </h3>
                   <span className="font-mono text-xs text-muted shrink-0 mt-1">
