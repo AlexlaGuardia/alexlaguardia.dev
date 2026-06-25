@@ -16,9 +16,9 @@ export function About() {
 
         <div className="space-y-4 text-muted leading-relaxed">
           <p>
-            I&apos;m a self-taught software engineer who found his way into code
-            through pure curiosity and a refusal to accept &ldquo;that&apos;s
-            not possible.&rdquo; What started as tinkering became an obsession
+            I&apos;m an engineer driven by curiosity and a refusal to accept
+            &ldquo;that&apos;s not possible.&rdquo; What started as tinkering
+            became an obsession
             with building, not just websites but complete systems that solve
             real problems.
           </p>
