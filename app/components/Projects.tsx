@@ -9,6 +9,7 @@ interface Project {
   description: string;
   tech: string[];
   highlights: string[];
+  demo?: string;
   github?: string;
   devto?: string;
   detail: { heading: string; content: string }[];
@@ -35,6 +36,7 @@ const projects: Project[] = [
       "Cross-vendor by design: an OpenAI function-call and an MCP tools/call normalize to one signed crumb schema, so attribution survives a change of wire",
       "pip-installable independent verifier (crumb verify <url>): a third party confirms the chain, signatures, Merkle root, and public anchor entirely client-side",
     ],
+    demo: "https://crumb.alexlaguardia.dev",
     github: "https://github.com/AlexlaGuardia/crumb",
     devto:
       "https://dev.to/alexlaguardia/an-ai-agent-acted-across-two-companies-whose-audit-log-knows-which-human-12nl",
@@ -76,6 +78,7 @@ const projects: Project[] = [
       "12/12 eval cases passing: accuracy, faithfulness, RBAC compliance, and honesty-on-denial, judged by a stronger model anchored to a deterministic oracle",
       "3 governance primitives (resource access, region row-scoping, field redaction) in one policy choke point the model cannot bypass",
     ],
+    demo: "https://warden.alexlaguardia.dev",
     github: "https://github.com/AlexlaGuardia/warden",
     detail: [
       {
@@ -701,6 +704,17 @@ function ProjectCard({
                       : undefined
                   }
                 >
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-sm px-4 py-2 bg-accent text-background font-medium rounded hover:bg-accent/90 transition-colors"
+                    >
+                      Live Demo &rarr;
+                    </a>
+                  )}
                   {project.github && (
                     <a
                       href={project.github}
