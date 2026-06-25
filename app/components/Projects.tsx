@@ -16,6 +16,47 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Crumb",
+    subtitle: "Tamper-Evident Attribution for AI Agent Actions",
+    description:
+      "AI agents act under shared service accounts, so your audit log says the agent did it, never which human directed it. Crumb is a flight recorder that closes that gap across both MCP and OpenAI function-calling: it binds every tool call to the human who authorized it, records a hash-chained signed crumb, and anchors the whole log to a public transparency log. An auditor can verify the record without trusting whoever holds it. Live public demo at crumb.alexlaguardia.dev: trigger an operator rollback and watch the signed chain stay green while the external Rekor anchor catches the forgery.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "MCP Auth Spec",
+      "RFC 8693 Token Exchange",
+      "OAuth 2.1",
+      "Sigstore Rekor",
+      "Ed25519 + Merkle Trees",
+      "Next.js",
+    ],
+    highlights: [
+      "Live click-to-use demo: hit operator rollback, the per-entry signatures still pass the forged chain, the public Rekor anchor does not",
+      "Cross-vendor by design: an OpenAI function-call and an MCP tools/call normalize to one signed crumb schema, so attribution survives a change of wire",
+      "pip-installable independent verifier (crumb verify <url>): a third party confirms the chain, signatures, Merkle root, and public anchor entirely client-side",
+    ],
+    github: "https://github.com/AlexlaGuardia/crumb",
+    devto:
+      "https://dev.to/alexlaguardia/an-ai-agent-acted-across-two-companies-whose-audit-log-knows-which-human-12nl",
+    detail: [
+      {
+        heading: "The problem",
+        content:
+          "When an AI agent reads a patient record, exports customer data, or moves money, it runs under a service account or a shared API key, so the log records the agent, not the human who told it to. That gap is about to be regulated: the EU AI Act (Article 12, in force August 2026) requires high-risk systems to log the identification of the natural persons involved, and a service-account log cannot answer that. It also is not a model problem you can prompt your way out of, because a tool call is just a name and arguments with no field for who, and anything the model emits can be prompt-injected. Identity has to be stamped by the runtime, outside the agent's reasoning.",
+      },
+      {
+        heading: "How it works",
+        content:
+          "The human is captured once at an OIDC session, never from the model. Every tool call is bound to an RFC 8693 delegation token carrying the human and the agent acting for them, scoped to one resource. Each call records a hash-chained, Ed25519-signed crumb, and the Merkle root of the whole log is anchored to Sigstore's public Rekor log. Per-entry signatures stop a forger without the key; the external anchor stops the operator, who could otherwise re-sign a rewritten history, because the rewritten root no longer matches the one already public.",
+      },
+      {
+        heading: "Honest scope",
+        content:
+          "Crumb is a flight recorder, not a control plane: it is read-only, after-the-fact, and provable, and it points at the enforcement lane (Cerbos, Capsule, Astrix) rather than competing with it. Attribution is only as strong as the gateway's interposition, and the demo enforces that chokepoint. It is built entirely on real standards (OAuth 2.1 + PKCE, OIDC, RFC 8693/8707, the MCP authorization spec, RFC 6962 Merkle trees, Sigstore Rekor), a research-stage flagship I build in public.",
+      },
+    ],
+  },
+  {
     title: "Warden",
     subtitle: "Governed MCP Server with Live Evals & Tracing",
     description:
@@ -146,7 +187,7 @@ const projects: Project[] = [
   },
   {
     title: "BatchTrack",
-    subtitle: "Published Shopify App — Perishable Inventory Tracking",
+    subtitle: "Published Shopify App for Perishable Inventory Tracking",
     description:
       "A Shopify app that tracks product batches and expiry dates for merchants who sell perishables, with threshold alerts and a daily email digest of what is expiring. Reviewed and approved by Shopify, live and installable on the Shopify App Store with managed billing, OAuth, and GDPR compliance webhooks.",
     tech: [

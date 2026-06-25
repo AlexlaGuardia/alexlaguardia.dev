@@ -2,6 +2,15 @@ import Link from "next/link";
 
 const posts = [
   {
+    title:
+      "An AI agent acted across two companies. Whose audit log knows which human?",
+    slug: "https://dev.to/alexlaguardia/an-ai-agent-acted-across-two-companies-whose-audit-log-knows-which-human-12nl",
+    date: "June 2026",
+    summary:
+      "Cross-issuer delegation in Crumb: when an agent's work spans two identity providers, vanilla RFC 8693 discards the first issuer's signature and re-asserts the human, a trust-me point that breaks verify-without-trusting-the-operator. The fix is provenance stapling, and the chain still traces back to one human.",
+    tags: ["MCP", "RFC 8693", "Agent Identity", "Sigstore", "Audit"],
+  },
+  {
     title: "Same question, three answers: building a governed MCP server",
     slug: "/writing/warden",
     date: "June 2026",
