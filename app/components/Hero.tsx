@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 
-// Deterministic pseudo-random — avoids hydration mismatch
+// Deterministic pseudo-random, avoids hydration mismatch
 function seededRandom(seed: number) {
   const x = Math.sin(seed + 1) * 10000;
   return x - Math.floor(x);
@@ -63,7 +63,7 @@ export function Hero() {
           {/* Top row: name + title */}
           <div className="bc-top">
             <h1 className="bc-name">Alex LaGuardia</h1>
-            <p className="bc-title">Software Engineer</p>
+            <p className="bc-title">AI / Backend Engineer</p>
           </div>
 
           {/* Divider */}
@@ -71,7 +71,7 @@ export function Hero() {
 
           {/* One-liner */}
           <p className="bc-tagline">
-            AI systems &nbsp;·&nbsp; production platforms &nbsp;·&nbsp; game engines
+            I ship production systems by directing a fleet of AI agents
           </p>
 
           {/* Contact row */}

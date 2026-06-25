@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Building Vigil — Alex LaGuardia",
+  title: "Building Vigil · Alex LaGuardia",
   description:
     "How I extracted cognitive infrastructure from a 95-tool production system into an open-source library for AI agents.",
 };

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Building Scionbee — Alex LaGuardia",
+  title: "Building Scionbee · Alex LaGuardia",
   description:
     "I built greenhouse software for one customer, on purpose. Why deep integration with a single grower is more interesting than SaaS at scale.",
 };

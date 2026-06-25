@@ -7,7 +7,7 @@ export function Contact() {
 
   return (
     <section ref={ref} id="contact" className="reveal relative py-32 px-6 overflow-hidden">
-      {/* Ambient glow — subtle, just enough to differentiate the section */}
+      {/* Ambient glow, subtle, just enough to differentiate the section */}
       <div className="contact-glow" aria-hidden="true" />
 
       <div className="relative max-w-xl mx-auto text-center">

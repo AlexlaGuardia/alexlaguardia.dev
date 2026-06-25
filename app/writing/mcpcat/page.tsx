@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Building mcpcat — Alex LaGuardia",
+  title: "Building mcpcat · Alex LaGuardia",
   description:
     "I got tired of guessing what my MCP server was exposing, so I built a CLI inspector in a few hours.",
 };

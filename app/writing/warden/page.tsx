@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Building Warden — Alex LaGuardia",
+  title: "Building Warden · Alex LaGuardia",
   description:
     "How I built a governed MCP server with RBAC enforced outside the model, OpenTelemetry traces on every run, and an LLM-as-judge eval suite that treats an honest denial as a passing grade.",
 };
