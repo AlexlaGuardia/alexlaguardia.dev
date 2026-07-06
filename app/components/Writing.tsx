@@ -2,6 +2,15 @@ import Link from "next/link";
 
 const posts = [
   {
+    title: "I pinned each issuer's public key. Then the IdP rotated it.",
+    slug: "https://dev.to/alexlaguardia/i-pinned-each-issuers-public-key-then-the-idp-rotated-it-3jon",
+    date: "July 2026",
+    summary:
+      "Crumb's verifier checks a delegation token against each issuer's key. I had them pinned as static PEMs, which breaks silently the day a real IdP rotates. The fix is fetching keys live by JWKS, and the careful part is that fetching a key is not the same as trusting it: keys come from the issuer, never from the log under audit.",
+    tags: ["MCP", "OAuth", "JWKS", "Agent Identity", "Security"],
+    external: true,
+  },
+  {
     title:
       "An AI agent acted across two companies. Whose audit log knows which human?",
     slug: "https://dev.to/alexlaguardia/an-ai-agent-acted-across-two-companies-whose-audit-log-knows-which-human-12nl",

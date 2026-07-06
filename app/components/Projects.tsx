@@ -104,6 +104,43 @@ const projects: Project[] = [
     ],
   },
   {
+    title: "Siege",
+    subtitle: "Runtime Red-Team Harness for Live MCP Servers",
+    description:
+      "The offense leg of the governance suite: Warden governs, Crumb attributes, Siege proves it holds. Point Siege at a running MCP server and it attacks as real roles, handing back the findings a static manifest scan cannot see, because the bug is not in the tool description, it is in how the server behaves when you actually exercise it. Found and fixed a real leak in Warden this way: a support role had the tier field redacted from its output, but a filter predicate on accounts still leaked it.",
+    tech: [
+      "Python",
+      "MCP Protocol",
+      "RBAC / Authz Probing",
+      "Prompt-Injection Testing",
+      "CLI",
+      "JSON Reporting",
+    ],
+    highlights: [
+      "Class A (authz / RBAC bypass): exercises the server as each role and diffs what comes back, catching redacted-field filter leaks and row-scope leaks a manifest grep never sees",
+      "Class B (tool poisoning / injection): a behavioral probe that tests how the server actually responds to injected instructions, not just what its tool descriptions say",
+      "One command against a live target (siege.cli scan --target), machine-readable JSON reports, and a before/after proof that regressions show up as findings",
+    ],
+    github: "https://github.com/AlexlaGuardia/siege",
+    detail: [
+      {
+        heading: "Why runtime, not static",
+        content:
+          "The MCP security tools that exist today (MCP-Scan, Snyk Agent Scan, Cisco's scanner) read the tool manifest: they grep tool descriptions for poisoned instructions. That catches a real class of attack, but it cannot catch the class that only exists when the server runs. A redacted field that leaks through a filter predicate, a role that can row-scope past its grant, an injection that changes behavior rather than the manifest, none of those live in the description. Siege is the offense counterpart to Warden's defense: it proves the enforcement actually holds under attack.",
+      },
+      {
+        heading: "How it works",
+        content:
+          "Siege connects to a live MCP server (stdio or HTTP), enumerates its tools, and calls them as each real role. The authz probe learns what each role should and should not see, then diffs actual responses against that model to surface RBAC and redaction bypasses. The injection probe measures behavioral drift under adversarial input. Every finding is severity-ranked and emitted as JSON for CI, so a governance regression fails the build instead of shipping quietly.",
+      },
+      {
+        heading: "Honest scope",
+        content:
+          "Two detector classes are implemented (authz/RBAC bypass and tool poisoning/injection); more leak classes are on the roadmap. It is a build-in-public research harness, not a product, and its whole point is to be pointed at my own governance layer and try to break it, the same discipline I would want on any system that lets an agent touch real data.",
+      },
+    ],
+  },
+  {
     title: "Vigil",
     subtitle: "Cognitive Infrastructure for AI Agents",
     description:

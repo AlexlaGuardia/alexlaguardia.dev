@@ -6,12 +6,12 @@
   <title>Alejandro Moreno - Resume</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    @page { size: letter; margin: 0.45in; }
+    @page { size: letter; margin: 0.4in; }
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       color: #1a1a1a;
       font-size: 8.6pt;
-      line-height: 1.12;
+      line-height: 1.07;
       max-width: 8.5in;
       margin: 0 auto;
       padding: 0.5in;
@@ -136,6 +136,19 @@
 
   <div class="project">
     <div class="project-header">
+      <h3>Agent-Governance Suite: Warden &middot; Crumb &middot; Siege</h3>
+      <span class="tech">Python, FastAPI, MCP, RBAC, OAuth / JWT, Sigstore</span>
+    </div>
+    <div class="subtitle"><a href="https://warden.alexlaguardia.dev">warden.alexlaguardia.dev</a> &middot; <a href="https://crumb.alexlaguardia.dev">crumb.alexlaguardia.dev</a> &middot; <a href="https://github.com/AlexlaGuardia/siege">github.com/AlexlaGuardia/siege</a></div>
+    <ul>
+      <li><strong>Warden</strong> governs: RBAC policy engine authorizes every agent tool call outside the model (region row-scoping, field redaction), so a compromised agent cannot exceed its grants; grounded eval harness and a live enforced-policy demo</li>
+      <li><strong>Crumb</strong> attributes: tamper-evident proof of which human directed an agent's tool call, verifiable across separate identity providers by fetching each issuer's key live (JWKS), never from the log under audit</li>
+      <li><strong>Siege</strong> proves it holds: runtime red-team harness that attacks a live MCP server as real roles, surfacing authz / RBAC bypasses a static manifest scan cannot see</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="project-header">
       <h3>Vigil: Observability &amp; Awareness Infrastructure for AI Agents</h3>
       <span class="tech">Python, FastAPI, MCP, SQLite, Stripe</span>
     </div>
@@ -143,18 +156,6 @@
     <ul>
       <li>Open-source package + hosted multi-tenant SaaS: one-line MCP instrumentation (latency p50/95/99, per-tool error rates, silent-failure detection) plus an awareness layer (signal bus, 90s daemon-compiled context, frame-based tool filtering, session handoff)</li>
       <li>Hosted tier: per-tenant SQLite isolation with LRU-cached connections, GitHub OAuth, hashed API keys, Stripe billing, ~8,400 lines, 311 tests, 4 PyPI releases</li>
-    </ul>
-  </div>
-
-  <div class="project">
-    <div class="project-header">
-      <h3>Warden: Governed MCP Server for AI Agents</h3>
-      <span class="tech">Python, FastAPI, MCP, RBAC, policy engine</span>
-    </div>
-    <div class="subtitle"><a href="https://warden.alexlaguardia.dev">warden.alexlaguardia.dev</a> &middot; <a href="https://github.com/AlexlaGuardia/warden">github.com/AlexlaGuardia/warden</a></div>
-    <ul>
-      <li>Governance layer that authorizes every agent tool call outside the model: RBAC policy engine with region row-scoping and field-level redaction, so a hallucinating or compromised agent still cannot exceed its grants</li>
-      <li>Grounded eval harness: a deterministic oracle computes ground truth through the governance layer and a stronger model judges a weaker model's answers against that reference; live demo with enforced policies</li>
     </ul>
   </div>
 
