@@ -107,7 +107,7 @@ const projects: Project[] = [
     title: "Siege",
     subtitle: "Runtime Red-Team Harness for Live MCP Servers",
     description:
-      "The offense leg of the governance suite: Warden governs, Crumb attributes, Siege proves it holds. Point Siege at a running MCP server and it attacks as real roles, handing back the findings a static manifest scan cannot see, because the bug is not in the tool description, it is in how the server behaves when you actually exercise it. Found and fixed a real leak in Warden this way: a support role had the tier field redacted from its output, but a filter predicate on accounts still leaked it.",
+      "The offense leg of the governance suite: Warden governs, Crumb attributes, Siege proves it holds. Point Siege at a running MCP server and it attacks as real roles, handing back the findings a static manifest scan cannot see, because the bug is not in the tool description, it is in how the server behaves when you actually exercise it. Found and fixed a real leak in Warden this way: a support role had the tier field redacted from its output, but a filter predicate on accounts still leaked it. Live before/after demo at siege.alexlaguardia.dev: watch Siege catch the leak on the vulnerable build and clear it on the fix.",
     tech: [
       "Python",
       "MCP Protocol",
@@ -121,6 +121,7 @@ const projects: Project[] = [
       "Class B (tool poisoning / injection): a behavioral probe that tests how the server actually responds to injected instructions, not just what its tool descriptions say",
       "One command against a live target (siege.cli scan --target), machine-readable JSON reports, and a before/after proof that regressions show up as findings",
     ],
+    demo: "https://siege.alexlaguardia.dev",
     github: "https://github.com/AlexlaGuardia/siege",
     detail: [
       {
