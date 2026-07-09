@@ -2,6 +2,33 @@ import Link from "next/link";
 
 const posts = [
   {
+    title:
+      "ChatGPT asks permission before it acts. It just doesn't count a GET as acting.",
+    slug: "/writing/chatgpt-get-consent-bypass",
+    date: "July 2026",
+    summary:
+      "I moved the tool-poisoning attack out of the lab and into the shipping product. A poisoned custom-GPT Action drove ChatGPT to exfiltrate a record I only asked it to read, five of five against a clean control at zero. The theft rode a GET, and ChatGPT's consent gate only fires on POST, so the one mitigation built to catch this never ran.",
+    tags: ["ChatGPT", "Prompt Injection", "Agent Security", "Data Exfiltration", "Crumb"],
+  },
+  {
+    title:
+      "Scan the tool description, I said. So I hid the payload somewhere else.",
+    slug: "/writing/tool-definition-poisoning",
+    date: "July 2026",
+    summary:
+      "A follow-up. The last piece said scan tool descriptions. So I moved the identical payload into a parameter field that reads 'the record id,' and into a schema property nobody fills in. Four models exfiltrated the record at the same rate as the prose. The attack surface is the whole tool definition, and instruction-hierarchy training only guards the tool-output door.",
+    tags: ["MCP", "Prompt Injection", "Agent Security", "Instruction Hierarchy", "Crumb"],
+  },
+  {
+    title:
+      "I put the same attack in two places. The one everyone warns about was the safe one.",
+    slug: "/writing/mcp-channel-asymmetry",
+    date: "July 2026",
+    summary:
+      "I hid one prompt-injection payload in a tool's description and in the data the tool returns. Same bytes. The runtime channel the whole field benchmarks was the safe one; instruction-hierarchy training hardens tool output and leaves tool descriptions wide open. gpt-4o obeyed in the description and refused the identical text in the output.",
+    tags: ["MCP", "Prompt Injection", "Agent Security", "Instruction Hierarchy", "Crumb"],
+  },
+  {
     title: "I pinned each issuer's public key. Then the IdP rotated it.",
     slug: "https://dev.to/alexlaguardia/i-pinned-each-issuers-public-key-then-the-idp-rotated-it-3jon",
     date: "July 2026",
