@@ -132,7 +132,7 @@ const projects: Project[] = [
       {
         heading: "How it works",
         content:
-          "Siege connects to a live MCP server (stdio or HTTP), enumerates its tools, and calls them as each real role. The authz probe learns what each role should and should not see, then diffs actual responses against that model to surface RBAC and redaction bypasses. The injection probe measures behavioral drift under adversarial input. Every finding is severity-ranked and emitted as JSON for CI, so a governance regression fails the build instead of shipping quietly.",
+          "Siege connects to a live MCP server over stdio, enumerates its tools, and calls them as each real role. The authz probe learns what each role should and should not see from the most-permissive identity at runtime (no hardcoded fields or roles), then diffs actual responses against that model to surface RBAC and redaction bypasses. The injection probe measures behavioral drift under adversarial input. Every finding is severity-ranked and emitted as JSON for CI, so a governance regression fails the build instead of shipping quietly. HTTP transport is on the roadmap.",
       },
       {
         heading: "Honest scope",
