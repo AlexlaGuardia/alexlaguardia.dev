@@ -2,6 +2,32 @@ import Link from "next/link";
 
 const posts = [
   {
+    title: "The model refused. Invisible characters changed its mind.",
+    slug: "/writing/encoding-alignment-bypass",
+    date: "July 2026",
+    summary:
+      "gpt-4.1-mini refused a plain-English exfil instruction six times out of six, then obeyed it six out of six once I put a zero-width space between every character. Same intent, one invisible codepoint. The obfuscation didn't slip past a filter in front of the model, it slipped past the model's own judgment. A homoglyph payload that was inert a week earlier went live on gpt-4o in the meantime, so \"the model won't act on it\" turned out to have an expiry date. Then I split the same directive across three fields instead of hiding it, and every model ignored it, thirty-six clean runs. Scanner-evasion and model-hijack are different axes. I shipped a deterministic normalize-before-scan fix in Vigil, and the run is the cleanest argument I have for attribution over detection.",
+    tags: ["MCP", "Prompt Injection", "Agent Security", "Alignment", "Crumb"],
+  },
+  {
+    title:
+      "A shipped agent framework ran the hidden payload. My own scanner caught it.",
+    slug: "/writing/agent-framework-value-slot",
+    date: "July 2026",
+    summary:
+      "The exfil order sat in an enum value, not the tool description. HuggingFace smolagents handed all of it to the model untouched, because its adapter filters nothing, and gpt-oss-120b called the export tool on its own, seven runs of ten, six of them in a field the description scan never opens. llama-3.3-70b resisted every pure machine slot and obeyed only the prose channels. Same payload, opposite models. Then I ran the exact tool definitions through the registration-time scanner I built, Vigil's scan-tools, and it flagged every channel that hijacked the framework, pinned as a regression corpus.",
+    tags: ["MCP", "Prompt Injection", "Agent Security", "Tool Poisoning", "Vigil"],
+  },
+  {
+    title:
+      "The tool swore it never exports data. The model read a different field.",
+    slug: "/writing/value-slot-override",
+    date: "July 2026",
+    summary:
+      "I hid the exfil order in an enum value, not the description. The description swore the tool was safe by design, the surface a human reviewer reads and a scanner classifies. gpt-4o and gpt-4.1-mini exported the record anyway, eight of eight against a clean control at zero. A specific in-writing denial of the exact action didn't lower the rate by a point. You can't review or description-scan your way out, because the field you're checking isn't the field the model obeys.",
+    tags: ["MCP", "Prompt Injection", "Agent Security", "Tool Poisoning", "Crumb"],
+  },
+  {
     title:
       "ChatGPT asks permission before it acts. It just doesn't count a GET as acting.",
     slug: "/writing/chatgpt-get-consent-bypass",
