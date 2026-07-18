@@ -2,6 +2,15 @@ import Link from "next/link";
 
 const posts = [
   {
+    title:
+      "An AI agent exported a patient record. Your logs can't say who told it to.",
+    slug: "/writing/crumb",
+    date: "July 2026",
+    summary:
+      "An agent running under a shared service account exports a patient record. The audit log says the bot did it, nothing about who told it to, and EU AI Act Article 12 asks for the actual person starting August 2026. I built Crumb, a gateway that pulls identity from the verified human session, never the model, mints an RFC 8693 delegation token nesting every hop back to that person, and anchors the ledger in Sigstore's public Rekor log so even the operator holding the signing key can't rewrite it undetected.",
+    tags: ["MCP", "RFC 8693", "Agent Identity", "Sigstore", "Crumb"],
+  },
+  {
     title: "The model refused. Invisible characters changed its mind.",
     slug: "/writing/encoding-alignment-bypass",
     date: "July 2026",
