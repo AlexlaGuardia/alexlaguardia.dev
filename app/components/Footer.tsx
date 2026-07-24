@@ -1,17 +1,6 @@
-export function Footer({ showShopLink = false }: { showShopLink?: boolean }) {
+export function Footer() {
   return (
     <footer className="py-8 px-6 border-t border-border">
-      {showShopLink && (
-        <div className="max-w-3xl mx-auto mb-6 flex justify-center">
-          <a
-            href="/shop"
-            className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 text-sm text-muted hover:text-foreground hover:border-accent/40 transition-colors"
-          >
-            Own a shop in central PA? I build custom office software
-            <span aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
-      )}
       <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-6">
           <a
