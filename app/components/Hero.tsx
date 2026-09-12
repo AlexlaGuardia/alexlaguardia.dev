@@ -1,4 +1,5 @@
 import { Starfield } from "./Starfield";
+import { OssReceipt } from "./OssReceipt";
 
 export function Hero() {
   return (
@@ -22,6 +23,7 @@ export function Hero() {
           <p className="bc-tagline">
             I ship production systems by directing a fleet of AI agents
           </p>
+          <OssReceipt />
 
           {/* Contact row */}
           <div className="bc-contact">
