@@ -1,5 +1,6 @@
 import { Starfield } from "./Starfield";
 import { OssReceipt } from "./OssReceipt";
+import { HeroCta } from "./HeroCta";
 
 export function Hero() {
   return (
@@ -39,12 +40,7 @@ export function Hero() {
 
       {/* CTAs */}
       <div className="hero-cta">
-        <a
-          href="#projects"
-          className="px-6 py-3 bg-accent/10 border border-accent/40 text-accent rounded hover:bg-accent/20 transition-colors text-sm font-medium"
-        >
-          See my work
-        </a>
+        <HeroCta />
         <a
           href="#contact"
           className="px-6 py-3 border border-border text-muted rounded hover:text-foreground hover:border-foreground/30 transition-colors text-sm font-medium"
